@@ -1,0 +1,271 @@
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .agent-figure {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            opacity: 0;
+            animation: figureAppear 1s ease-out 1.5s forwards;
+        }
+        @keyframes figureAppear {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .agent-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            background: white;
+            border-radius: 60px 60px 20px 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            transition: all 0.8s ease;
+        }
+        .agent-head {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .agent-eyes {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .eye {
+            width: 25px;
+            height: 25px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .agent-mouth {
+            position: absolute;
+            top: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+            background: white;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .agent-arms {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 6px;
+            background: white;
+            border-radius: 3px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .agent-heart {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 35px;
+            background: white;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .agent-heart::before,
+        .agent-heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .agent-heart::after {
+            left: 20px;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        .agent-legs {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            border-left: 6px solid white;
+            border-right: 6px solid white;
+            border-bottom: none;
+            border-top: none;
+            box-shadow: -2px 0 8px rgba(0,0,0,0.3), 2px 0 8px rgba(0,0,0,0.3);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .function-label {
+            position: absolute;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 5;
+        }
+        .function-label.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .function-label.active {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            box-shadow: 0 0 30px rgba(231, 76, 60, 0.8);
+            transform: scale(1.1);
+            animation: labelGlow 1.5s ease-in-out;
+        }
+        @keyframes labelGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(231, 76, 60, 0.8); }
+            50% { box-shadow: 0 0 40px rgba(231, 76, 60, 1); }
+        }
+        .part-glow {
+            transition: all 0.8s ease;
+        }
+        .part-glow.active {
+            filter: drop-shadow(0 0 25px rgba(231, 76, 60, 1)) drop-shadow(0 0 40px rgba(231, 76, 60, 0.6));
+            transform: scale(1.05);
+        }
+        .holistic-glow.active {
+            filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.8));
+        }
+        /* Label positions */
+        .planning-label {
+            top: 20px;
+            left: 50px;
+        }
+        .memory-label {
+            top: 180px;
+            right: 30px;
+        }
+        .inputs-label {
+            top: 50px;
+            left: -80px;
+        }
+        .tools-label {
+            top: 160px;
+            left: -70px;
+        }
+        .outputs-label {
+            bottom: 120px;
+            right: -60px;
+        }
+        .guardrails-label {
+            bottom: 40px;
+            left: 50px;
+        }
+        .bottom-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(52, 152, 219, 0.95);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        .bottom-caption.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .connection-line {
+            position: absolute;
+            background: rgba(231, 76, 60, 0.8);
+            opacity: 0;
+            transition: all 0.6s ease;
+            z-index: 1;
+        }
+        .connection-line.show {
+            opacity: 1;
+        }
+        .line-brain {
+            width: 2px;
+            height: 60px;
+            top: 80px;
+            left: 150px;
+            transform: rotate(-30deg);
+        }
+        .line-memory {
+            width: 2px;
+            height: 80px;
+            top: 200px;
+            right: 120px;
+            transform: rotate(45deg);
+        }
+        .line-inputs {
+            width: 2px;
+            height: 70px;
+            top: 60px;
+            left: 80px;
+            transform: rotate(45deg);
+        }
+        .line-tools {
+            width: 2px;
+            height: 60px;
+            top: 170px;
+            left: 70px;
+            transform: rotate(-15deg);
+        }
+        .line-outputs {
+            width: 2px;
+            height: 70px;
+            bottom: 140px;
+            right: 90px;
+            transform: rotate(-45deg);
+        }
+        .line-guardrails {
+            width: 2px;
+            height: 80px;
+            bottom: 80px;
+            left: 150px;
+            transform: rotate(30deg);
+        }

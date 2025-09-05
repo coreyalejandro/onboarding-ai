@@ -1,0 +1,308 @@
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .lens-half {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            transition: all 1s ease;
+        }
+        .left-lens {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-right: 3px solid #34495e;
+        }
+        .right-lens {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        .lens-title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.95);
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+        /* Teacher-Student Side */
+        .teacher-student-diagram {
+            width: 100%;
+            max-width: 400px;
+            height: 350px;
+            position: relative;
+            opacity: 0;
+            animation: slideInLeft 1s ease-out 0.5s forwards;
+        }
+        .person-figure {
+            width: 120px;
+            height: 180px;
+            background: white;
+            border-radius: 60px 60px 20px 20px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+        }
+        .teacher {
+            top: 20px;
+            left: 50px;
+        }
+        .student {
+            bottom: 20px;
+            right: 50px;
+        }
+        .person-head {
+            width: 40px;
+            height: 40px;
+            background: #f39c12;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .person-body {
+            width: 60px;
+            background: #3498db;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .teacher .person-body {
+            background: #e67e22;
+        }
+        .connection-line {
+            position: absolute;
+            background: white;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        .prompt-line {
+            width: 3px;
+            height: 120px;
+            top: 80px;
+            left: 170px;
+            transform: rotate(-45deg);
+            animation: lineGrow 1s ease-out 2s forwards;
+        }
+        .answer-line {
+            width: 3px;
+            height: 120px;
+            top: 160px;
+            left: 270px;
+            transform: rotate(45deg);
+            animation: lineGrow 1s ease-out 3s forwards;
+        }
+        @keyframes lineGrow {
+            from { opacity: 0; height: 0; }
+            to { opacity: 1; height: 120px; }
+        }
+        .ts-label {
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #2c3e50;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        .ts-label.show {
+            opacity: 1;
+        }
+        .teacher-label {
+            top: -10px;
+            left: 20px;
+        }
+        .student-label {
+            bottom: -10px;
+            right: 20px;
+        }
+        .assignments-label {
+            top: 50px;
+            right: 100px;
+        }
+        .grades-label {
+            bottom: 50px;
+            left: 100px;
+        }
+        /* Agent Anatomy Side */
+        .agent-anatomy {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.8s forwards;
+        }
+        .vitruvian-agent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 280px;
+        }
+        .agent-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            background: white;
+            border-radius: 40px 40px 10px 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .agent-head {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+        }
+        .agent-arms {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 3px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+        }
+        .agent-legs {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-left: 3px solid white;
+            border-right: 3px solid white;
+            border-bottom: none;
+            border-top: none;
+            transition: all 0.5s ease;
+        }
+        .anatomy-label {
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: #2c3e50;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: all 0.5s ease;
+            pointer-events: none;
+        }
+        .anatomy-label.highlight {
+            opacity: 1;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.6);
+            background: rgba(231, 76, 60, 0.95);
+            color: white;
+        }
+        .brain-label {
+            top: 10px;
+            left: 20px;
+        }
+        .eyes-label {
+            top: 35px;
+            left: -30px;
+        }
+        .mouth-label {
+            top: 60px;
+            right: -30px;
+        }
+        .hands-label {
+            top: 75px;
+            left: -50px;
+        }
+        .memory-label {
+            top: 120px;
+            right: -40px;
+        }
+        .skin-label {
+            bottom: 40px;
+            left: -30px;
+        }
+        .highlight-glow {
+            transition: all 0.5s ease;
+        }
+        .highlight-glow.active {
+            filter: drop-shadow(0 0 15px rgba(231, 76, 60, 0.8));
+            transform: scale(1.1);
+        }
+        .fade-background {
+            transition: opacity 1.5s ease;
+        }
+        .fade-background.faded {
+            opacity: 0.3;
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .connection-arrow {
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: white;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        .connection-arrow::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid white;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        .prompt-arrow {
+            top: 120px;
+            left: 200px;
+            transform: rotate(-30deg);
+        }
+        .answer-arrow {
+            top: 200px;
+            left: 240px;
+            transform: rotate(30deg);
+        }
