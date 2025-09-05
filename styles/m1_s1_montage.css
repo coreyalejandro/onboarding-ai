@@ -72,6 +72,13 @@
         .twitter { animation: flyPath5 4s ease-in-out infinite 1.2s; }
         .blog { animation: flyPath6 4s ease-in-out infinite 1.5s; }
         .stack { animation: flyPath7 4s ease-in-out infinite 1.8s; }
+        .news { animation: flyPath8 4.2s ease-in-out infinite 2.1s; }
+        .forum { animation: flyPath9 4.5s ease-in-out infinite 2.4s; }
+        .newsletter { animation: flyPath10 4.3s ease-in-out infinite 2.7s; }
+        .github { animation: flyPath11 4.8s ease-in-out infinite 3s; }
+        .podcast { animation: flyPath12 4.1s ease-in-out infinite 3.3s; }
+        .tiktok { animation: flyPath13 4.6s ease-in-out infinite 3.6s; }
+        .linkedin { animation: flyPath14 4.2s ease-in-out infinite 3.9s; }
         @keyframes flyPath1 {
             0% { transform: translate(-350px, 100px) rotate(-15deg) scale(0.8); opacity: 0; }
             15% { opacity: 1; }
@@ -121,6 +128,72 @@
             85% { opacity: 1; }
             100% { transform: translate(calc(100vw + 100px), -80px) rotate(-20deg) scale(0.95); opacity: 0; }
         }
+        /* Additional paths for wider distribution */
+        @keyframes flyPath8 {
+            0% { transform: translate(-350px, 260px) rotate(10deg) scale(0.9); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(35vw, 220px) rotate(-6deg) scale(1); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), 320px) rotate(14deg) scale(0.95); opacity: 0; }
+        }
+        @keyframes flyPath9 {
+            0% { transform: translate(-350px, -230px) rotate(-12deg) scale(0.85); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(40vw, -180px) rotate(10deg) scale(1.05); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), -240px) rotate(-18deg) scale(0.9); opacity: 0; }
+        }
+        @keyframes flyPath10 {
+            0% { transform: translate(-350px, 0px) rotate(6deg) scale(0.9); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(50vw, 160px) rotate(-10deg) scale(1); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), 40px) rotate(16deg) scale(0.95); opacity: 0; }
+        }
+        @keyframes flyPath11 {
+            0% { transform: translate(-350px, 300px) rotate(-8deg) scale(0.95); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(30vw, 260px) rotate(12deg) scale(1.05); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), 200px) rotate(-14deg) scale(0.9); opacity: 0; }
+        }
+        @keyframes flyPath12 {
+            0% { transform: translate(-350px, -220px) rotate(14deg) scale(0.85); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(45vw, -60px) rotate(-8deg) scale(1); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), -200px) rotate(18deg) scale(0.9); opacity: 0; }
+        }
+        @keyframes flyPath13 {
+            0% { transform: translate(-350px, 140px) rotate(-16deg) scale(0.9); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(38vw, -120px) rotate(6deg) scale(1.05); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), 120px) rotate(-10deg) scale(0.95); opacity: 0; }
+        }
+        @keyframes flyPath14 {
+            0% { transform: translate(-350px, 220px) rotate(8deg) scale(0.9); opacity: 0; }
+            15% { opacity: 1; }
+            50% { transform: translate(55vw, -200px) rotate(-12deg) scale(1); }
+            85% { opacity: 1; }
+            100% { transform: translate(calc(100vw + 100px), 260px) rotate(14deg) scale(0.95); opacity: 0; }
+        }
+        /* Header colors per source */
+        .source-item.youtube .source-header { background: #ff0000; }
+        .source-item.reddit .source-header { background: #ff4500; }
+        .source-item.medium .source-header { background: #000; }
+        .source-item.discord .source-header { background: #7289da; }
+        .source-item.twitter .source-header { background: #1da1f2; }
+        .source-item.blog .source-header { background: #2c3e50; }
+        .source-item.stack .source-header { background: #f48024; }
+        .source-item.news .source-header { background: #c0392b; }
+        .source-item.forum .source-header { background: #16a085; }
+        .source-item.newsletter .source-header { background: #8e44ad; }
+        .source-item.github .source-header { background: #24292e; }
+        .source-item.podcast .source-header { background: #e67e22; }
+        .source-item.tiktok .source-header { background: #000; }
+        .source-item.linkedin .source-header { background: #0a66c2; }
+        .source-item.github .source-content { color: #222; }
         .message-overlay {
             position: absolute;
             top: 50%;
