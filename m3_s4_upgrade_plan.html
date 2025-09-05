@@ -1,148 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module 3 - Slide 4: Upgrade Plan</title>
-        <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/m3_s4_upgrade_plan.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m3_s4_upgrade_plan.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="slide-title">Upgrade Plan: From Hobby to Professional</div>
+      <div class="slide-title">Upgrade Plan: From Hobby to Professional</div>
 
-        <div class="steps-container">
-            <!-- Step 1: Define Spec -->
-            <div class="upgrade-step" id="step1">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <div class="step-description">
-                        <div class="step-title">Define a Clear Spec</div>
-                        <div class="step-subtitle">What's in scope, what's out of scope, and success criteria</div>
-                    </div>
-                    <div class="step-example">
-                        <div class="example-header">agent_spec.yaml</div>
-<span class="yaml-key">scope:</span>
-  <span class="yaml-key">can_do:</span>
-    - <span class="yaml-string">"Answer FAQ questions"</span>
-    - <span class="yaml-string">"Schedule appointments"</span>
-  <span class="yaml-key">cannot_do:</span>
-    - <span class="yaml-string">"Process payments"</span>
-    - <span class="yaml-string">"Access user data"</span>
-
-<span class="yaml-key">success_criteria:</span>
-  <span class="yaml-key">response_time:</span> <span class="yaml-value">&lt; 2s</span>
-  <span class="yaml-key">accuracy:</span> <span class="yaml-value">&gt; 95%</span>
-                    </div>
-                </div>
-                <div class="upgrade-badge">Upgraded ✓</div>
+      <div class="steps-container">
+        <!-- Step 1: Define Spec -->
+        <div class="upgrade-step" id="step1">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-description">
+              <div class="step-title">Define a Clear Spec</div>
+              <div class="step-subtitle">
+                What's in scope, what's out of scope, and success criteria
+              </div>
             </div>
+            <div class="step-example">
+              <div class="example-header">agent_spec.yaml</div>
+              <span class="yaml-key">scope:</span>
+              <span class="yaml-key">can_do:</span>
+              - <span class="yaml-string">"Answer FAQ questions"</span> -
+              <span class="yaml-string">"Schedule appointments"</span>
+              <span class="yaml-key">cannot_do:</span>
+              - <span class="yaml-string">"Process payments"</span> -
+              <span class="yaml-string">"Access user data"</span>
 
-            <!-- Step 2: Add Golden Tests -->
-            <div class="upgrade-step" id="step2">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <div class="step-description">
-                        <div class="step-title">Add Golden Tests</div>
-                        <div class="step-subtitle">Golden tests and edge cases; run them on every change</div>
-                    </div>
-                    <div class="step-example">
-                        <div class="example-header">test_golden.yaml</div>
-<span class="yaml-key">tests:</span>
-  - <span class="yaml-key">name:</span> <span class="yaml-string">"basic_greeting"</span>
-    <span class="yaml-key">input:</span> <span class="yaml-string">"Hello"</span>
-    <span class="yaml-key">expected:</span> <span class="yaml-string">"Hi! How can I help?"</span>
-  
-  - <span class="yaml-key">name:</span> <span class="yaml-string">"out_of_scope"</span>
-    <span class="yaml-key">input:</span> <span class="yaml-string">"Delete my account"</span>
-    <span class="yaml-key">expected:</span> <span class="yaml-string">"I cannot help with account deletion"</span>
-                    </div>
-                </div>
-                <div class="upgrade-badge">Upgraded ✓</div>
+              <span class="yaml-key">success_criteria:</span>
+              <span class="yaml-key">response_time:</span>
+              <span class="yaml-value">&lt; 2s</span>
+              <span class="yaml-key">accuracy:</span>
+              <span class="yaml-value">&gt; 95%</span>
             </div>
-
-            <!-- Step 3: Instrument with Logging -->
-            <div class="upgrade-step" id="step3">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <div class="step-description">
-                        <div class="step-title">Instrument the Agent</div>
-                        <div class="step-subtitle">Add logging, tracing, and metrics</div>
-                    </div>
-                    <div class="step-example">
-                        <div class="example-header">logging.js</div>
-<span class="js-keyword">function</span> <span class="js-function">handleRequest</span>(input) {
-  logger.<span class="js-function">info</span>(<span class="js-string">'Request received'</span>, { 
-    input, timestamp: <span class="js-keyword">Date</span>.<span class="js-function">now</span>() 
-  });
-  
-  <span class="js-keyword">const</span> response = processInput(input);
-  
-  metrics.<span class="js-function">record</span>(<span class="js-string">'response_time'</span>, duration);
-  <span class="js-keyword">return</span> response;
-}
-                    </div>
-                </div>
-                <div class="upgrade-badge">Upgraded ✓</div>
-            </div>
-
-            <!-- Step 4: Implement Guardrails -->
-            <div class="upgrade-step" id="step4">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <div class="step-description">
-                        <div class="step-title">Implement Guardrails</div>
-                        <div class="step-subtitle">Safe-fail behaviors and refusal patterns</div>
-                    </div>
-                    <div class="step-example">
-                        <div class="example-header">guardrails.js</div>
-<span class="js-keyword">const</span> refusalPatterns = [
-  <span class="js-string">/delete.*account/i</span>,
-  <span class="js-string">/access.*database/i</span>,
-  <span class="js-string">/payment.*information/i</span>
-];
-
-<span class="js-keyword">function</span> <span class="js-function">checkGuardrails</span>(input) {
-  <span class="js-keyword">if</span> (refusalPatterns.<span class="js-function">some</span>(p => p.<span class="js-function">test</span>(input))) {
-    <span class="js-keyword">return</span> <span class="js-string">"I cannot help with that request."</span>;
-  }
-}
-                    </div>
-                </div>
-                <div class="upgrade-badge">Upgraded ✓</div>
-            </div>
-
-            <!-- Step 5: Document Everything -->
-            <div class="upgrade-step" id="step5">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <div class="step-description">
-                        <div class="step-title">Document Everything</div>
-                        <div class="step-subtitle">How to run it, extend it, and test it</div>
-                    </div>
-                    <div class="step-example">
-                        <div class="example-header">README.md</div>
-<span class="yaml-comment"># Customer Support Agent</span>
-
-<span class="yaml-comment">## Quick Start</span>
-npm install && npm start
-
-<span class="yaml-comment">## Testing</span>
-npm run test:golden
-
-<span class="yaml-comment">## Monitoring</span>
-Logs: /var/log/agent.log
-Metrics: /metrics endpoint
-
-<span class="yaml-comment">## Guardrails</span>
-See guardrails.js for refusal patterns
-                    </div>
-                </div>
-                <div class="upgrade-badge">Upgraded ✓</div>
-            </div>
+          </div>
+          <div class="upgrade-badge">Upgraded ✓</div>
         </div>
+
+        <!-- Step 2: Add Golden Tests -->
+        <div class="upgrade-step" id="step2">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-description">
+              <div class="step-title">Add Golden Tests</div>
+              <div class="step-subtitle">
+                Golden tests and edge cases; run them on every change
+              </div>
+            </div>
+            <div class="step-example">
+              <div class="example-header">test_golden.yaml</div>
+              <span class="yaml-key">tests:</span>
+              - <span class="yaml-key">name:</span>
+              <span class="yaml-string">"basic_greeting"</span>
+              <span class="yaml-key">input:</span>
+              <span class="yaml-string">"Hello"</span>
+              <span class="yaml-key">expected:</span>
+              <span class="yaml-string">"Hi! How can I help?"</span>
+
+              - <span class="yaml-key">name:</span>
+              <span class="yaml-string">"out_of_scope"</span>
+              <span class="yaml-key">input:</span>
+              <span class="yaml-string">"Delete my account"</span>
+              <span class="yaml-key">expected:</span>
+              <span class="yaml-string"
+                >"I cannot help with account deletion"</span
+              >
+            </div>
+          </div>
+          <div class="upgrade-badge">Upgraded ✓</div>
+        </div>
+
+        <!-- Step 3: Instrument with Logging -->
+        <div class="upgrade-step" id="step3">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-description">
+              <div class="step-title">Instrument the Agent</div>
+              <div class="step-subtitle">Add logging, tracing, and metrics</div>
+            </div>
+            <div class="step-example">
+              <div class="example-header">logging.js</div>
+              <span class="js-keyword">function</span>
+              <span class="js-function">handleRequest</span>(input) {
+              logger.<span class="js-function">info</span>(<span
+                class="js-string"
+                >'Request received'</span
+              >, { input, timestamp: <span class="js-keyword">Date</span>.<span
+                class="js-function"
+                >now</span
+              >() });
+
+              <span class="js-keyword">const</span> response =
+              processInput(input); metrics.<span class="js-function"
+                >record</span
+              >(<span class="js-string">'response_time'</span>, duration);
+              <span class="js-keyword">return</span> response; }
+            </div>
+          </div>
+          <div class="upgrade-badge">Upgraded ✓</div>
+        </div>
+
+        <!-- Step 4: Implement Guardrails -->
+        <div class="upgrade-step" id="step4">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-description">
+              <div class="step-title">Implement Guardrails</div>
+              <div class="step-subtitle">
+                Safe-fail behaviors and refusal patterns
+              </div>
+            </div>
+            <div class="step-example">
+              <div class="example-header">guardrails.js</div>
+              <span class="js-keyword">const</span> refusalPatterns = [
+              <span class="js-string">/delete.*account/i</span>,
+              <span class="js-string">/access.*database/i</span>,
+              <span class="js-string">/payment.*information/i</span>
+              ];
+
+              <span class="js-keyword">function</span>
+              <span class="js-function">checkGuardrails</span>(input) {
+              <span class="js-keyword">if</span> (refusalPatterns.<span
+                class="js-function"
+                >some</span
+              >(p => p.<span class="js-function">test</span>(input))) {
+              <span class="js-keyword">return</span>
+              <span class="js-string">"I cannot help with that request."</span>;
+              } }
+            </div>
+          </div>
+          <div class="upgrade-badge">Upgraded ✓</div>
+        </div>
+
+        <!-- Step 5: Document Everything -->
+        <div class="upgrade-step" id="step5">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <div class="step-description">
+              <div class="step-title">Document Everything</div>
+              <div class="step-subtitle">
+                How to run it, extend it, and test it
+              </div>
+            </div>
+            <div class="step-example">
+              <div class="example-header">README.md</div>
+              <span class="yaml-comment"># Customer Support Agent</span>
+
+              <span class="yaml-comment">## Quick Start</span>
+              npm install && npm start
+
+              <span class="yaml-comment">## Testing</span>
+              npm run test:golden
+
+              <span class="yaml-comment">## Monitoring</span>
+              Logs: /var/log/agent.log Metrics: /metrics endpoint
+
+              <span class="yaml-comment">## Guardrails</span>
+              See guardrails.js for refusal patterns
+            </div>
+          </div>
+          <div class="upgrade-badge">Upgraded ✓</div>
+        </div>
+      </div>
     </div>
 
-        <script src="scripts/m3_s4_upgrade_plan.js"></script>
-</body>
+    <script src="scripts/m3_s4_upgrade_plan.js"></script>
+  </body>
 </html>

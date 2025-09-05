@@ -1,80 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module 2 - Slide 1: Chatbot != Agent</title>
-        <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/m2_s1_chatbot_agent.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m2_s1_chatbot_agent.css" />
+  </head>
+  <body>
     <div class="split-container">
-        <!-- Left Side: Chatbot -->
-        <div class="split-half left-side">
-            <div class="section-label">Chatbot</div>
-            
-            <div class="chat-interface">
-                <div class="chat-header">
-                    ChatGPT
-                </div>
-                <div class="chat-messages">
-                    <div class="message user">
-                        <div class="message-bubble">
-                            What's the weather?
-                        </div>
-                    </div>
-                    <div class="message bot">
-                        <div class="message-bubble">
-                            I don't have access to real-time weather data. You can check the weather by visiting weather.com or using a weather app on your device.
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Left Side: Chatbot -->
+      <div class="split-half left-side">
+        <div class="section-label">Chatbot</div>
 
-            <div class="red-x-overlay" id="redXOverlay">
-                <div class="red-x">✕</div>
+        <div class="chat-interface">
+          <div class="chat-header">ChatGPT</div>
+          <div class="chat-messages">
+            <div class="message user">
+              <div class="message-bubble">What's the weather?</div>
             </div>
+            <div class="message bot">
+              <div class="message-bubble">
+                I don't have access to real-time weather data. You can check the
+                weather by visiting weather.com or using a weather app on your
+                device.
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Right Side: Agent -->
-        <div class="split-half right-side">
-            <div class="section-label">Agent</div>
-            
-            <div class="agent-diagram">
-                <div class="flow-step" id="step1">
-                    <div class="step-title">User Prompt</div>
-                    <div class="step-desc">"What's the weather in San Francisco?"</div>
-                    <div class="flow-arrow"></div>
-                </div>
-
-                <div class="flow-step" id="step2">
-                    <div class="step-title">Planner</div>
-                    <div class="step-desc">Decomposes task: need weather API call</div>
-                    <div class="flow-arrow"></div>
-                </div>
-
-                <div class="flow-step" id="step3">
-                    <div class="step-title">Tool Calls</div>
-                    <div class="step-desc">Executes weather API, gets current data</div>
-                    <div class="flow-arrow"></div>
-                </div>
-
-                <div class="flow-step" id="step4">
-                    <div class="step-title">Memory Update</div>
-                    <div class="step-desc">Stores context and user preferences</div>
-                    <div class="flow-arrow"></div>
-                </div>
-
-                <div class="flow-step" id="step5">
-                    <div class="step-title">Final Answer</div>
-                    <div class="step-desc">"It's 72°F and sunny in San Francisco"</div>
-                </div>
-            </div>
+        <div class="red-x-overlay" id="redXOverlay">
+          <div class="red-x">✕</div>
         </div>
+      </div>
 
-        <div class="vs-separator">≠</div>
+      <!-- Right Side: Agent -->
+      <div class="split-half right-side">
+        <div class="section-label">Agent</div>
+
+        <div class="agent-diagram">
+          <div class="flow-step" id="step1">
+            <div class="step-title">User Prompt</div>
+            <div class="step-desc">"What's the weather in San Francisco?"</div>
+            <div class="flow-arrow"></div>
+          </div>
+
+          <div class="flow-step" id="step2">
+            <div class="step-title">Planner</div>
+            <div class="step-desc">Decomposes task: need weather API call</div>
+            <div class="flow-arrow"></div>
+          </div>
+
+          <div class="flow-step" id="step3">
+            <div class="step-title">Tool Calls</div>
+            <div class="step-desc">Executes weather API, gets current data</div>
+            <div class="flow-arrow"></div>
+          </div>
+
+          <div class="flow-step" id="step4">
+            <div class="step-title">Memory Update</div>
+            <div class="step-desc">Stores context and user preferences</div>
+            <div class="flow-arrow"></div>
+          </div>
+
+          <div class="flow-step" id="step5">
+            <div class="step-title">Final Answer</div>
+            <div class="step-desc">"It's 72°F and sunny in San Francisco"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vs-separator">≠</div>
     </div>
 
-        <script src="scripts/m2_s1_chatbot_agent.js"></script>
-</body>
+    <script src="scripts/m2_s1_chatbot_agent.js"></script>
+  </body>
 </html>

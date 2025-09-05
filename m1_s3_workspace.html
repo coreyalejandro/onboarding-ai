@@ -1,124 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module 1 - Slide 3: Building the SST-Aligned Workspace</title>
-        <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/m1_s3_workspace.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m1_s3_workspace.css" />
+  </head>
+  <body>
     <div class="step-container">
-        <!-- Step 1: Create Note-Taking System -->
-        <div class="step active" id="step1">
-            <div class="step-header">
-                <div class="step-number">1</div>
-                <div class="step-title">Create a note-taking system</div>
-            </div>
-            <div class="step-content">
-                <div class="tool-options">
-                    <div class="tool-card" id="notion">
-                        <div class="tool-logo">📝</div>
-                        <div class="tool-name">Notion</div>
-                    </div>
-                    <div class="tool-card" id="gdocs">
-                        <div class="tool-logo">📄</div>
-                        <div class="tool-name">Google Docs</div>
-                    </div>
-                    <div class="tool-card" id="obsidian">
-                        <div class="tool-logo">🔗</div>
-                        <div class="tool-name">Obsidian</div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px; font-size: 1.3rem; color: #666;">
-                    It doesn't matter. Just make it frictionless.
-                </div>
-            </div>
+      <!-- Step 1: Create Note-Taking System -->
+      <div class="step active" id="step1">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <div class="step-title">Create a note-taking system</div>
         </div>
+        <div class="step-content">
+          <div class="tool-options">
+            <div class="tool-card" id="notion">
+              <div class="tool-logo">📝</div>
+              <div class="tool-name">Notion</div>
+            </div>
+            <div class="tool-card" id="gdocs">
+              <div class="tool-logo">📄</div>
+              <div class="tool-name">Google Docs</div>
+            </div>
+            <div class="tool-card" id="obsidian">
+              <div class="tool-logo">🔗</div>
+              <div class="tool-name">Obsidian</div>
+            </div>
+          </div>
+          <div
+            style="
+              text-align: center;
+              margin-top: 40px;
+              font-size: 1.3rem;
+              color: #666;
+            "
+          >
+            It doesn't matter. Just make it frictionless.
+          </div>
+        </div>
+      </div>
 
-        <!-- Step 2: Set Your SST in Stone -->
-        <div class="step" id="step2">
-            <div class="step-header">
-                <div class="step-number">2</div>
-                <div class="step-title">Set your SST in stone</div>
-            </div>
-            <div class="step-content">
-                <div class="sst-setup">
-                    <div class="sst-input">
-                        <div class="input-group">
-                            <label class="input-label">Link to your SST:</label>
-                            <input type="text" class="input-field" placeholder="https://docs.anthropic.com/claude/docs/creating-an-agent" readonly>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">Keep it open during every session</label>
-                            <input type="text" class="input-field" placeholder="Always visible in browser tab" readonly>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">Write notes in your own words:</label>
-                            <input type="text" class="input-field" placeholder="Not copied definitions" readonly>
-                        </div>
-                    </div>
-                    <div class="sst-preview">
-                        <h3 style="color: #667eea; margin-top: 0;">Your Single Source</h3>
-                        <p style="color: #666; line-height: 1.6;">Link saved and pinned. This will be your only reference during the module. No YouTube detours. No Twitter rabbit holes.</p>
-                        <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                            <strong>📌 Pinned:</strong> Claude Agent Docs
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Step 2: Set Your SST in Stone -->
+      <div class="step" id="step2">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <div class="step-title">Set your SST in stone</div>
         </div>
+        <div class="step-content">
+          <div class="sst-setup">
+            <div class="sst-input">
+              <div class="input-group">
+                <label class="input-label">Link to your SST:</label>
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="https://docs.anthropic.com/claude/docs/creating-an-agent"
+                  readonly
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-label"
+                  >Keep it open during every session</label
+                >
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="Always visible in browser tab"
+                  readonly
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-label"
+                  >Write notes in your own words:</label
+                >
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="Not copied definitions"
+                  readonly
+                />
+              </div>
+            </div>
+            <div class="sst-preview">
+              <h3 style="color: #667eea; margin-top: 0">Your Single Source</h3>
+              <p style="color: #666; line-height: 1.6">
+                Link saved and pinned. This will be your only reference during
+                the module. No YouTube detours. No Twitter rabbit holes.
+              </p>
+              <div
+                style="
+                  background: white;
+                  padding: 15px;
+                  border-radius: 8px;
+                  margin-top: 20px;
+                "
+              >
+                <strong>📌 Pinned:</strong> Claude Agent Docs
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Step 3: Add Glossary and Parking Lot -->
-        <div class="step" id="step3">
-            <div class="step-header">
-                <div class="step-number">3</div>
-                <div class="step-title">Add a glossary and parking lot</div>
-            </div>
-            <div class="step-content">
-                <div class="structure-builder">
-                    <div class="structure-item" id="structure1">
-                        <div class="structure-icon">📘</div>
-                        <div class="structure-text">
-                            <div class="structure-title">SST: Claude Agent Docs</div>
-                            <div class="structure-desc">Your single source reference</div>
-                        </div>
-                    </div>
-                    <div class="structure-item" id="structure2">
-                        <div class="structure-icon">🧠</div>
-                        <div class="structure-text">
-                            <div class="structure-title">Glossary</div>
-                            <div class="structure-desc">Your own definitions</div>
-                        </div>
-                    </div>
-                    <div class="structure-item" id="structure3">
-                        <div class="structure-icon">📆</div>
-                        <div class="structure-text">
-                            <div class="structure-title">Weekly Learning Journal</div>
-                            <div class="structure-desc">Track your progress</div>
-                        </div>
-                    </div>
-                    <div class="structure-item" id="structure4">
-                        <div class="structure-icon">❓</div>
-                        <div class="structure-text">
-                            <div class="structure-title">Parking Lot</div>
-                            <div class="structure-desc">Confusions to revisit later</div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 30px; font-size: 1.2rem; color: #667eea; font-weight: 600;">
-                    Capture what you don't know — but don't chase every unknown yet. Sequester.
-                </div>
-            </div>
+      <!-- Step 3: Add Glossary and Parking Lot -->
+      <div class="step" id="step3">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <div class="step-title">Add a glossary and parking lot</div>
         </div>
+        <div class="step-content">
+          <div class="structure-builder">
+            <div class="structure-item" id="structure1">
+              <div class="structure-icon">📘</div>
+              <div class="structure-text">
+                <div class="structure-title">SST: Claude Agent Docs</div>
+                <div class="structure-desc">Your single source reference</div>
+              </div>
+            </div>
+            <div class="structure-item" id="structure2">
+              <div class="structure-icon">🧠</div>
+              <div class="structure-text">
+                <div class="structure-title">Glossary</div>
+                <div class="structure-desc">Your own definitions</div>
+              </div>
+            </div>
+            <div class="structure-item" id="structure3">
+              <div class="structure-icon">📆</div>
+              <div class="structure-text">
+                <div class="structure-title">Weekly Learning Journal</div>
+                <div class="structure-desc">Track your progress</div>
+              </div>
+            </div>
+            <div class="structure-item" id="structure4">
+              <div class="structure-icon">❓</div>
+              <div class="structure-text">
+                <div class="structure-title">Parking Lot</div>
+                <div class="structure-desc">Confusions to revisit later</div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              text-align: center;
+              margin-top: 30px;
+              font-size: 1.2rem;
+              color: #667eea;
+              font-weight: 600;
+            "
+          >
+            Capture what you don't know — but don't chase every unknown yet.
+            Sequester.
+          </div>
+        </div>
+      </div>
 
-        <div class="progress-bar">
-            <div class="progress-dot active" id="dot1"></div>
-            <div class="progress-dot" id="dot2"></div>
-            <div class="progress-dot" id="dot3"></div>
-        </div>
+      <div class="progress-bar">
+        <div class="progress-dot active" id="dot1"></div>
+        <div class="progress-dot" id="dot2"></div>
+        <div class="progress-dot" id="dot3"></div>
+      </div>
     </div>
 
-        <script src="scripts/m1_s3_workspace.js"></script>
-</body>
+    <script src="scripts/m1_s3_workspace.js"></script>
+  </body>
 </html>

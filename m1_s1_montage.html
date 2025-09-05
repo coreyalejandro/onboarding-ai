@@ -1,105 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module 1 - Slide 1: Too Many Sources = No Signal</title>
-        <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/m1_s1_montage.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m1_s1_montage.css" />
+  </head>
+  <body>
     <div class="chaos-container" id="chaosContainer">
-        <div class="noise-overlay"></div>
-        
-        <div class="source-counter" id="sourceCounter">
-            Sources: <span id="count">47</span>
-        </div>
+      <div class="noise-overlay"></div>
 
-        <div class="signal-indicator">
-            📡 SIGNAL: LOST
-        </div>
+      <div class="source-counter" id="sourceCounter">
+        Sources: <span id="count">47</span>
+      </div>
 
-        <!-- Source items flying across -->
-        <div class="source-item youtube">
-            <div class="source-header" style="background: #ff0000;">🎥 YouTube</div>
-            <div class="source-content">
-                <strong>10 AI Tools You NEED!</strong><br>
-                "This changed everything!"<br>
-                👀 2.3M views • 47 comments<br>
-                ⏰ 12:47 - Posted 2 hours ago
-            </div>
-        </div>
+      <div class="signal-indicator">📡 SIGNAL: LOST</div>
 
-        <div class="source-item reddit">
-            <div class="source-header" style="background: #ff4500;">📱 r/MachineLearning</div>
-            <div class="source-content">
-                <strong>🔥 New LLM just dropped</strong><br>
-                "Anyone tried this yet?"<br>
-                ⬆️ 1.2k upvotes • 347 comments<br>
-                💬 Discussion heating up...
-            </div>
+      <!-- Source items flying across -->
+      <div class="source-item youtube">
+        <div class="source-header" style="background: #ff0000">🎥 YouTube</div>
+        <div class="source-content">
+          <strong>10 AI Tools You NEED!</strong><br />
+          "This changed everything!"<br />
+          👀 2.3M views • 47 comments<br />
+          ⏰ 12:47 - Posted 2 hours ago
         </div>
+      </div>
 
-        <div class="source-item medium">
-            <div class="source-header" style="background: #000;">📰 Medium</div>
-            <div class="source-content">
-                <strong>The Ultimate AI Guide</strong><br>
-                "Everything you need to know"<br>
-                👏 2.1k claps • 15 min read<br>
-                📅 Published yesterday
-            </div>
+      <div class="source-item reddit">
+        <div class="source-header" style="background: #ff4500">
+          📱 r/MachineLearning
         </div>
+        <div class="source-content">
+          <strong>🔥 New LLM just dropped</strong><br />
+          "Anyone tried this yet?"<br />
+          ⬆️ 1.2k upvotes • 347 comments<br />
+          💬 Discussion heating up...
+        </div>
+      </div>
 
-        <div class="source-item discord">
-            <div class="source-header" style="background: #7289da;">💬 Discord #ai-general</div>
-            <div class="source-content">
-                <strong>What's the best framework?</strong><br>
-                "@everyone thoughts?"<br>
-                🔴 47 online • 15 typing...<br>
-                💭 23 new messages
-            </div>
+      <div class="source-item medium">
+        <div class="source-header" style="background: #000">📰 Medium</div>
+        <div class="source-content">
+          <strong>The Ultimate AI Guide</strong><br />
+          "Everything you need to know"<br />
+          👏 2.1k claps • 15 min read<br />
+          📅 Published yesterday
         </div>
+      </div>
 
-        <div class="source-item twitter">
-            <div class="source-header" style="background: #1da1f2;">🐦 Twitter/X</div>
-            <div class="source-content">
-                <strong>AI Thread 🧵</strong><br>
-                "MUST READ: 1/47"<br>
-                🔄 1.5k retweets • 893 likes<br>
-                💬 "This is huge!"
-            </div>
+      <div class="source-item discord">
+        <div class="source-header" style="background: #7289da">
+          💬 Discord #ai-general
         </div>
+        <div class="source-content">
+          <strong>What's the best framework?</strong><br />
+          "@everyone thoughts?"<br />
+          🔴 47 online • 15 typing...<br />
+          💭 23 new messages
+        </div>
+      </div>
 
-        <div class="source-item blog">
-            <div class="source-header" style="background: #2c3e50;">📝 Tech Blog</div>
-            <div class="source-content">
-                <strong>AI Trends 2024</strong><br>
-                "Industry insider reveals..."<br>
-                📖 8 min read • Featured<br>
-                🔥 Trending in AI
-            </div>
+      <div class="source-item twitter">
+        <div class="source-header" style="background: #1da1f2">
+          🐦 Twitter/X
         </div>
+        <div class="source-content">
+          <strong>AI Thread 🧵</strong><br />
+          "MUST READ: 1/47"<br />
+          🔄 1.5k retweets • 893 likes<br />
+          💬 "This is huge!"
+        </div>
+      </div>
 
-        <div class="source-item stack">
-            <div class="source-header" style="background: #f48024;">🔧 StackOverflow</div>
-            <div class="source-content">
-                <strong>How to implement...?</strong><br>
-                "Getting this error..."<br>
-                ✅ 3 answers • 47 views<br>
-                🏆 Accepted answer
-            </div>
+      <div class="source-item blog">
+        <div class="source-header" style="background: #2c3e50">
+          📝 Tech Blog
         </div>
+        <div class="source-content">
+          <strong>AI Trends 2024</strong><br />
+          "Industry insider reveals..."<br />
+          📖 8 min read • Featured<br />
+          🔥 Trending in AI
+        </div>
+      </div>
 
-        <div class="message-overlay" id="messageOverlay">
-            <div class="primary-message">
-                Too Many Sources<br>=<br>No Signal
-            </div>
-            <div class="secondary-message">
-                Pick ONE Source.<br>Stick With It.
-            </div>
+      <div class="source-item stack">
+        <div class="source-header" style="background: #f48024">
+          🔧 StackOverflow
         </div>
+        <div class="source-content">
+          <strong>How to implement...?</strong><br />
+          "Getting this error..."<br />
+          ✅ 3 answers • 47 views<br />
+          🏆 Accepted answer
+        </div>
+      </div>
+
+      <div class="message-overlay" id="messageOverlay">
+        <div class="primary-message">
+          Too Many Sources<br />=<br />No Signal
+        </div>
+        <div class="secondary-message">
+          Pick ONE Source.<br />Stick With It.
+        </div>
+      </div>
     </div>
 
-        <script src="scripts/m1_s1_montage.js"></script>
-</body>
+    <script src="scripts/m1_s1_montage.js"></script>
+  </body>
 </html>
