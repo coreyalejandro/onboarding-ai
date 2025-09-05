@@ -1,0 +1,318 @@
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        .scene-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            transition: all 1.5s ease;
+        }
+        .gambling-scene {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: sceneSlideIn 1s ease-out 1.5s forwards;
+        }
+        @keyframes sceneSlideIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .person-figure {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 120px;
+        }
+        .person-head {
+            width: 30px;
+            height: 30px;
+            background: #f39c12;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .person-body {
+            width: 40px;
+            background: white;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        .person-arms {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            animation: armThrow 2s ease-in-out infinite;
+        }
+        @keyframes armThrow {
+            0%, 60%, 100% { transform: translateX(-50%) rotate(0deg); }
+            30% { transform: translateX(-50%) rotate(-30deg); }
+        }
+        .dice-container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .dice {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.7rem;
+            color: #e74c3c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: diceFly 3s ease-in-out infinite;
+        }
+        .dice:nth-child(1) {
+            animation-delay: 0s;
+            left: -15px;
+        }
+        .dice:nth-child(2) {
+            animation-delay: 0.5s;
+            left: 15px;
+            top: -10px;
+        }
+        .dice:nth-child(3) {
+            animation-delay: 1s;
+            left: 45px;
+            top: 5px;
+        }
+        @keyframes diceFly {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-80px) rotate(180deg); opacity: 0.8; }
+            100% { transform: translateY(150px) rotate(360deg); opacity: 0; }
+        }
+        .wishing-well {
+            position: absolute;
+            bottom: 80px;
+            right: 20%;
+            width: 120px;
+            height: 80px;
+        }
+        .well-base {
+            width: 100%;
+            height: 60px;
+            background: #7f8c8d;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        .well-top {
+            position: absolute;
+            top: -10px;
+            left: 10%;
+            width: 80%;
+            height: 20px;
+            background: #95a5a6;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .well-rope {
+            position: absolute;
+            top: -40px;
+            right: 20px;
+            width: 2px;
+            height: 30px;
+            background: #8b4513;
+        }
+        .well-bucket {
+            position: absolute;
+            top: -45px;
+            right: 15px;
+            width: 12px;
+            height: 15px;
+            background: #654321;
+            border-radius: 2px;
+        }
+        .gambling-label {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(231, 76, 60, 0.95);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+            animation: labelPulse 2s ease-in-out infinite;
+        }
+        @keyframes labelPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+        .red-x-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(231, 76, 60, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+            z-index: 5;
+        }
+        .red-x-overlay.show {
+            opacity: 1;
+        }
+        .red-x {
+            font-size: 12rem;
+            color: #e74c3c;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(231, 76, 60, 0.8);
+            animation: xPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes xPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+        .checklist-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            border-radius: 20px;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 1.5s ease;
+        }
+        .checklist-container.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .checklist-title {
+            background: rgba(255,255,255,0.95);
+            color: #2c3e50;
+            padding: 20px 40px;
+            border-radius: 25px;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 25px 30px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            opacity: 0.3;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+        .checklist-item.active {
+            opacity: 1;
+            transform: translateX(0);
+            border-left: 6px solid #27ae60;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(39, 174, 96, 0.1) 100%);
+        }
+        .checkbox {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #bdc3c7;
+            border-radius: 8px;
+            margin-right: 25px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        .checkbox.checked {
+            background: #27ae60;
+            border-color: #27ae60;
+            animation: checkPop 0.6s ease-out;
+        }
+        @keyframes checkPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: checkAppear 0.3s ease-out 0.2s both;
+        }
+        @keyframes checkAppear {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        .structure-label {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(52, 152, 219, 0.95);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+            opacity: 0;
+            animation: structureLabelAppear 1s ease-out 8s forwards;
+        }
+        @keyframes structureLabelAppear {
+            from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
