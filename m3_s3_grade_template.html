@@ -1,108 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module 3 - Slide 3: Grade an Agent Template</title>
-        <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/m3_s3_grade_template.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m3_s3_grade_template.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="slide-title">Grade an Agent Template Against the Checklist</div>
+      <div class="slide-title">
+        Grade an Agent Template Against the Checklist
+      </div>
 
-        <div class="main-content">
-            <!-- Configuration Panel -->
-            <div class="config-panel">
-                <div class="config-header">agent_config.yaml</div>
-                <div class="config-content" id="configContent">
-<span class="yaml-comment"># Agent Configuration</span>
-<span class="yaml-key">name:</span> <span class="yaml-string">"Customer Support Agent"</span>
-<span class="yaml-key">version:</span> <span class="yaml-string">"1.2.0"</span>
+      <div class="main-content">
+        <!-- Configuration Panel -->
+        <div class="config-panel">
+          <div class="config-header">agent_config.yaml</div>
+          <div class="config-content" id="configContent">
+            <span class="yaml-comment"># Agent Configuration</span>
+            <span class="yaml-key">name:</span>
+            <span class="yaml-string">"Customer Support Agent"</span>
+            <span class="yaml-key">version:</span>
+            <span class="yaml-string">"1.2.0"</span>
 
-<span class="yaml-comment"># Agent Specification</span>
-<span class="yaml-key">scope:</span>
-  <span class="yaml-key">can_do:</span>
-    - <span class="yaml-string">"Answer customer questions"</span>
-    - <span class="yaml-string">"Look up order status"</span>
-    - <span class="yaml-string">"Process refund requests"</span>
-  <span class="yaml-key">cannot_do:</span>
-    - <span class="yaml-string">"Access financial data"</span>
-    - <span class="yaml-string">"Modify user accounts"</span>
+            <span class="yaml-comment"># Agent Specification</span>
+            <span class="yaml-key">scope:</span>
+            <span class="yaml-key">can_do:</span>
+            - <span class="yaml-string">"Answer customer questions"</span> -
+            <span class="yaml-string">"Look up order status"</span> -
+            <span class="yaml-string">"Process refund requests"</span>
+            <span class="yaml-key">cannot_do:</span>
+            - <span class="yaml-string">"Access financial data"</span> -
+            <span class="yaml-string">"Modify user accounts"</span>
 
-<span class="yaml-comment"># Success Criteria</span>
-<span class="yaml-key">success_metrics:</span>
-  <span class="yaml-key">response_time:</span> <span class="yaml-value">&lt; 3 seconds</span>
-  <span class="yaml-key">accuracy:</span> <span class="yaml-value">&gt; 95%</span>
+            <span class="yaml-comment"># Success Criteria</span>
+            <span class="yaml-key">success_metrics:</span>
+            <span class="yaml-key">response_time:</span>
+            <span class="yaml-value">&lt; 3 seconds</span>
+            <span class="yaml-key">accuracy:</span>
+            <span class="yaml-value">&gt; 95%</span>
 
-<span class="yaml-comment"># Testing Configuration</span>
-<span class="yaml-key">tests:</span>
-  <span class="yaml-key">golden_tests:</span>
-    - <span class="yaml-key">input:</span> <span class="yaml-string">"What's my order status?"</span>
-      <span class="yaml-key">expected:</span> <span class="yaml-string">"I'll look that up for you"</span>
-    - <span class="yaml-key">input:</span> <span class="yaml-string">"Delete my account"</span>
-      <span class="yaml-key">expected:</span> <span class="yaml-string">"I cannot help with account deletion"</span>
+            <span class="yaml-comment"># Testing Configuration</span>
+            <span class="yaml-key">tests:</span>
+            <span class="yaml-key">golden_tests:</span>
+            - <span class="yaml-key">input:</span>
+            <span class="yaml-string">"What's my order status?"</span>
+            <span class="yaml-key">expected:</span>
+            <span class="yaml-string">"I'll look that up for you"</span> -
+            <span class="yaml-key">input:</span>
+            <span class="yaml-string">"Delete my account"</span>
+            <span class="yaml-key">expected:</span>
+            <span class="yaml-string"
+              >"I cannot help with account deletion"</span
+            >
 
-<span class="yaml-comment"># Observability</span>
-<span class="yaml-key">logging:</span>
-  <span class="yaml-key">level:</span> <span class="yaml-string">"INFO"</span>
-  <span class="yaml-key">trace_requests:</span> <span class="yaml-value">true</span>
-  <span class="yaml-key">metrics_enabled:</span> <span class="yaml-value">true</span>
+            <span class="yaml-comment"># Observability</span>
+            <span class="yaml-key">logging:</span>
+            <span class="yaml-key">level:</span>
+            <span class="yaml-string">"INFO"</span>
+            <span class="yaml-key">trace_requests:</span>
+            <span class="yaml-value">true</span>
+            <span class="yaml-key">metrics_enabled:</span>
+            <span class="yaml-value">true</span>
 
-<span class="yaml-comment"># Safety & Guardrails</span>
-<span class="yaml-key">guardrails:</span>
-  <span class="yaml-key">refuse_patterns:</span>
-    - <span class="yaml-string">"account modification"</span>
-    - <span class="yaml-string">"financial access"</span>
-  <span class="yaml-key">escalation_triggers:</span>
-    - <span class="yaml-string">"angry customer"</span>
-    - <span class="yaml-string">"complex technical issue"</span>
-                </div>
-            </div>
-
-            <!-- Checklist Panel -->
-            <div class="checklist-panel">
-                <div class="checklist-header">Professional-Grade Checklist</div>
-
-                <div class="checklist-item red" id="specItem">
-                    <div class="status-indicator status-red" id="specStatus">✕</div>
-                    <div>
-                        <div class="item-label">Spec</div>
-                        <div class="item-description">Defines scope and constraints</div>
-                    </div>
-                </div>
-
-                <div class="checklist-item red" id="testsItem">
-                    <div class="status-indicator status-red" id="testsStatus">✕</div>
-                    <div>
-                        <div class="item-label">Tests</div>
-                        <div class="item-description">Has golden tests</div>
-                    </div>
-                </div>
-
-                <div class="checklist-item red" id="observabilityItem">
-                    <div class="status-indicator status-red" id="observabilityStatus">✕</div>
-                    <div>
-                        <div class="item-label">Observability</div>
-                        <div class="item-description">Logs and traces</div>
-                    </div>
-                </div>
-
-                <div class="checklist-item red" id="guardrailsItem">
-                    <div class="status-indicator status-red" id="guardrailsStatus">✕</div>
-                    <div>
-                        <div class="item-label">Guardrails</div>
-                        <div class="item-description">Can decline tasks outside scope</div>
-                    </div>
-                </div>
-            </div>
+            <span class="yaml-comment"># Safety & Guardrails</span>
+            <span class="yaml-key">guardrails:</span>
+            <span class="yaml-key">refuse_patterns:</span>
+            - <span class="yaml-string">"account modification"</span> -
+            <span class="yaml-string">"financial access"</span>
+            <span class="yaml-key">escalation_triggers:</span>
+            - <span class="yaml-string">"angry customer"</span> -
+            <span class="yaml-string">"complex technical issue"</span>
+          </div>
         </div>
 
-        <div class="summary-panel" id="summaryPanel">
-            Result: 4/4 Complete ✓ This agent meets professional-grade standards
+        <!-- Checklist Panel -->
+        <div class="checklist-panel">
+          <div class="checklist-header">Professional-Grade Checklist</div>
+
+          <div class="checklist-item red" id="specItem">
+            <div class="status-indicator status-red" id="specStatus">✕</div>
+            <div>
+              <div class="item-label">Spec</div>
+              <div class="item-description">Defines scope and constraints</div>
+            </div>
+          </div>
+
+          <div class="checklist-item red" id="testsItem">
+            <div class="status-indicator status-red" id="testsStatus">✕</div>
+            <div>
+              <div class="item-label">Tests</div>
+              <div class="item-description">Has golden tests</div>
+            </div>
+          </div>
+
+          <div class="checklist-item red" id="observabilityItem">
+            <div class="status-indicator status-red" id="observabilityStatus">
+              ✕
+            </div>
+            <div>
+              <div class="item-label">Observability</div>
+              <div class="item-description">Logs and traces</div>
+            </div>
+          </div>
+
+          <div class="checklist-item red" id="guardrailsItem">
+            <div class="status-indicator status-red" id="guardrailsStatus">
+              ✕
+            </div>
+            <div>
+              <div class="item-label">Guardrails</div>
+              <div class="item-description">
+                Can decline tasks outside scope
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="summary-panel" id="summaryPanel">
+        Result: 4/4 Complete ✓ This agent meets professional-grade standards
+      </div>
     </div>
 
-        <script src="scripts/m3_s3_grade_template.js"></script>
-</body>
+    <script src="scripts/m3_s3_grade_template.js"></script>
+  </body>
 </html>
