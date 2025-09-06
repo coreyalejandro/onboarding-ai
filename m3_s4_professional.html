@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 3 - Slide 4: Upgrade Plan -- From Hobby to Professional</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m3_s4_professional.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">
+        Upgrade Plan -- From Hobby to Professional
+      </div>
+
+      <div class="main-content">
+        <!-- Upgrade Steps Container -->
+        <div class="upgrade-steps-container">
+          <!-- Step 1: Define Spec -->
+          <div class="upgrade-step" id="step1">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-title">Define a Clear Spec</div>
+              <div class="step-description">
+                What's in scope, what's out of scope, and success criteria
+              </div>
+              <div class="step-example" id="specExample">
+                <div class="example-header">Example: agent_config.yaml</div>
+                <div class="example-content">
+                  <span class="yaml-key">scope:</span>
+                  <span class="yaml-key">can_do:</span>
+                  - <span class="yaml-string">"Answer customer questions"</span>
+                  - <span class="yaml-string">"Look up order status"</span>
+                  <span class="yaml-key">cannot_do:</span>
+                  - <span class="yaml-string">"Access financial data"</span>
+                  <span class="yaml-key">success_criteria:</span>
+                  <span class="yaml-key">response_time:</span> <span class="yaml-value">&lt; 3 seconds</span>
+                  <span class="yaml-key">accuracy:</span> <span class="yaml-value">&gt; 95%</span>
+                </div>
+              </div>
+            </div>
+            <div class="step-status" id="step1Status">Pending</div>
+          </div>
+
+          <!-- Step 2: Add Golden Tests -->
+          <div class="upgrade-step" id="step2">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-title">Add Golden Tests and Edge Cases</div>
+              <div class="step-description">
+                Run them on every change
+              </div>
+              <div class="step-example" id="testsExample">
+                <div class="example-header">Example: golden_tests.yaml</div>
+                <div class="example-content">
+                  <span class="yaml-key">tests:</span>
+                  - <span class="yaml-key">name:</span> <span class="yaml-string">"order_status_lookup"</span>
+                  <span class="yaml-key">input:</span> <span class="yaml-string">"What's my order status?"</span>
+                  <span class="yaml-key">expected:</span> <span class="yaml-string">"I'll look that up for you"</span>
+                  - <span class="yaml-key">name:</span> <span class="yaml-string">"out_of_scope_refusal"</span>
+                  <span class="yaml-key">input:</span> <span class="yaml-string">"Delete my account"</span>
+                  <span class="yaml-key">expected:</span> <span class="yaml-string">"I cannot help with account deletion"</span>
+                </div>
+              </div>
+            </div>
+            <div class="step-status" id="step2Status">Pending</div>
+          </div>
+
+          <!-- Step 3: Instrument with Logging -->
+          <div class="upgrade-step" id="step3">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-title">Instrument with Logging, Tracing, and Metrics</div>
+              <div class="step-description">
+                Make behavior transparent and debuggable
+              </div>
+              <div class="step-example" id="loggingExample">
+                <div class="example-header">Example: logging_config.yaml</div>
+                <div class="example-content">
+                  <span class="yaml-key">logging:</span>
+                  <span class="yaml-key">level:</span> <span class="yaml-string">"INFO"</span>
+                  <span class="yaml-key">trace_requests:</span> <span class="yaml-value">true</span>
+                  <span class="yaml-key">metrics_enabled:</span> <span class="yaml-value">true</span>
+                  <span class="yaml-key">log_format:</span> <span class="yaml-string">"structured"</span>
+                </div>
+              </div>
+            </div>
+            <div class="step-status" id="step3Status">Pending</div>
+          </div>
+
+          <!-- Step 4: Implement Guardrails -->
+          <div class="upgrade-step" id="step4">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-title">Implement Guardrails</div>
+              <div class="step-description">
+                Safe-fail behaviors and refusal patterns
+              </div>
+              <div class="step-example" id="guardrailsExample">
+                <div class="example-header">Example: guardrails.yaml</div>
+                <div class="example-content">
+                  <span class="yaml-key">guardrails:</span>
+                  <span class="yaml-key">refuse_patterns:</span>
+                  - <span class="yaml-string">"account modification"</span>
+                  - <span class="yaml-string">"financial access"</span>
+                  <span class="yaml-key">escalation_triggers:</span>
+                  - <span class="yaml-string">"angry customer"</span>
+                  - <span class="yaml-string">"complex technical issue"</span>
+                </div>
+              </div>
+            </div>
+            <div class="step-status" id="step4Status">Pending</div>
+          </div>
+
+          <!-- Step 5: Document Everything -->
+          <div class="upgrade-step" id="step5">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-title">Document Everything</div>
+              <div class="step-description">
+                How to run it, how to extend it, how to test it
+              </div>
+              <div class="step-example" id="docsExample">
+                <div class="example-header">Example: README.md</div>
+                <div class="example-content">
+                  <span class="markdown-header"># Customer Support Agent</span>
+                  <span class="markdown-text">## Quick Start</span>
+                  <span class="markdown-code">npm install && npm test</span>
+                  <span class="markdown-text">## Testing</span>
+                  <span class="markdown-code">npm run golden-tests</span>
+                  <span class="markdown-text">## Extending</span>
+                  <span class="markdown-text">See CONTRIBUTING.md for guidelines</span>
+                </div>
+              </div>
+            </div>
+            <div class="step-status" id="step5Status">Pending</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-panel" id="summaryPanel">
+        Result: 5/5 Steps Complete ✓ Your agent is now professional-grade
+      </div>
+    </div>
+
+    <script src="scripts/m3_s4_professional.js"></script>
+  </body>
+</html>
