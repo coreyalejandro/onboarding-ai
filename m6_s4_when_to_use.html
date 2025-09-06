@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 6 - Slide 4: When to Use Which</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m6_s4_when_to_use.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">When to Use ML‑Friendly vs Natural Language</div>
+
+      <div class="two-column">
+        <div class="column ml-column">
+          <div class="column-title">Use ML‑Friendly When…</div>
+          <ul class="criteria-list">
+            <li>Outputs must be reproducible and testable</li>
+            <li>Agents/tools consume structured outputs</li>
+            <li>Safety/compliance constraints apply</li>
+            <li>Metrics and SLAs matter</li>
+            <li>Golden/eval tests are required</li>
+          </ul>
+        </div>
+
+        <div class="column nl-column">
+          <div class="column-title">Use Natural Language When…</div>
+          <ul class="criteria-list">
+            <li>Brainstorming and ideation</li>
+            <li>Exploratory research</li>
+            <li>Open‑ended creative writing</li>
+            <li>Conversational guidance</li>
+            <li>Low‑stakes, human‑in‑the‑loop tasks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="decision-banner" id="decisionBanner">Rule of thumb: default to Anthropic Framework → relax to natural language only when exploration outweighs precision.</div>
+    </div>
+
+    <script src="scripts/m6_s4_when_to_use.js"></script>
+  </body>
+  
+</html>
+

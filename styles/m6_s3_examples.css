@@ -1,0 +1,7 @@
+.container { padding: 30px 20px; }
+.slide-title { margin-bottom: 20px; }
+.examples-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.example-panel { border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: #0b1020; }
+.panel-title { font-weight: 800; padding: 10px 12px; background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.code-block { padding: 12px; color: #e2e8f0; white-space: pre-wrap; min-height: 160px; }
+.bottom-caption { margin-top: 16px; color: #cbd5e1; text-align: center; }

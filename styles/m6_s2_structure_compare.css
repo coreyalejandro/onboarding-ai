@@ -1,0 +1,11 @@
+.container { padding: 30px 20px; }
+.slide-title { margin-bottom: 20px; }
+.split-container { display: flex; gap: 20px; }
+.split-half { flex: 1; }
+.panel-header { font-weight: 800; margin-bottom: 10px; }
+.structure-list { margin: 0 0 12px 16px; }
+.framework-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.fw-item { display: flex; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 8px; background: #0b1020; border: 1px solid rgba(255,255,255,0.1); }
+.fw-key { font-weight: 700; color: #cbd5e1; }
+.fw-desc { color: #94a3b8; }
+.example-box { background: #0f172a; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 12px; color: #e2e8f0; white-space: pre-wrap; min-height: 120px; }

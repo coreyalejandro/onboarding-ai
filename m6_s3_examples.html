@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 6 - Slide 3: Examples — NL vs ML-Friendly</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m6_s3_examples.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Examples: Natural Language vs ML‑Friendly</div>
+
+      <div class="examples-split">
+        <div class="example-panel left" id="nlPanel">
+          <div class="panel-title">Natural Language</div>
+          <div class="code-block">
+"Please analyze this customer chat transcript and tell me what's going on and what we should do next."
+          </div>
+        </div>
+
+        <div class="example-panel right" id="mlPanel">
+          <div class="panel-title">ML‑Friendly (Anthropic Framework)</div>
+          <div class="code-block">
+Role & Objective: Analyze the transcript and recommend the next action.
+Constraints & Safety: No personal data exposure; do not invent facts.
+Process: Identify intent → detect sentiment → map to playbook.
+Output Format: JSON object { intent, sentiment, recommended_action }.
+Success Criteria: Intent is one of ["billing","tech_support","cancellation"]; action references playbook ID.
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-caption" id="bottomCaption">Structured prompts enable consistent evaluation and routing.</div>
+    </div>
+
+    <script src="scripts/m6_s3_examples.js"></script>
+  </body>
+</html>
+

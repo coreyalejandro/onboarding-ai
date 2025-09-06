@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 6 - Slide 1: Machine-Learning-Friendly Prompts — Power and Purpose</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m6_s1_ml_friendly_power.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Machine-Learning-Friendly Prompts: Power and Purpose</div>
+
+      <div class="split-container">
+        <div class="split-half left-side">
+          <div class="section-label">Why ML‑Friendly Prompts</div>
+
+          <ul class="benefits-list">
+            <li class="benefit-item" id="benefit1">
+              Determinism: clearer constraints → more reproducible outputs
+            </li>
+            <li class="benefit-item" id="benefit2">
+              Testability: easier to write goldens and catch regressions
+            </li>
+            <li class="benefit-item" id="benefit3">
+              Observability fit: structured outputs → better tracing/metrics
+            </li>
+            <li class="benefit-item" id="benefit4">
+              Safety: explicit guardrails and refusal patterns
+            </li>
+          </ul>
+        </div>
+
+        <div class="split-half right-side">
+          <div class="section-label">Quick Contrast</div>
+
+          <div class="contrast-cards">
+            <div class="card nl-card">
+              <div class="card-title">Natural Language Prompt</div>
+              <div class="card-body">
+                "Can you summarize this report and tell me what's important?"
+              </div>
+            </div>
+
+            <div class="card ml-card">
+              <div class="card-title">ML‑Friendly Prompt (Anthropic Framework)</div>
+              <div class="card-body">
+                <div class="prompt-block">
+                  <div class="prompt-line"><strong>Role & Objective:</strong> Summarize the provided report.</div>
+                  <div class="prompt-line"><strong>Constraints:</strong> ≤ 120 words, bullet points, no speculation.</div>
+                  <div class="prompt-line"><strong>Process:</strong> Identify 5 key findings; de‑duplicate; order by impact.</div>
+                  <div class="prompt-line"><strong>Output Format:</strong> JSON array of strings.</div>
+                  <div class="prompt-line"><strong>Success Criteria:</strong> Matches facts; includes metrics; no opinions.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/m6_s1_ml_friendly_power.js"></script>
+  </body>
+</html>
+
