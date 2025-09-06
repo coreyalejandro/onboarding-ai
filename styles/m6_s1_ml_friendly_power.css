@@ -1,66 +1,170 @@
-.container {
-  padding: 30px 20px;
-}
-
-.slide-title {
-  margin-bottom: 20px;
-}
-
-.split-container {
-  display: flex;
-  gap: 20px;
-}
-
-.split-half {
-  flex: 1;
-}
-
-.section-label {
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.benefits-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.benefit-item {
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: 12px 14px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.contrast-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.card {
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-  background: #0b1020;
-}
-
-.card-title {
-  font-weight: 700;
-  padding: 10px 12px;
-  background: rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.card-body {
-  padding: 12px;
-  color: #e2e8f0;
-  white-space: pre-wrap;
-}
-
-.prompt-block .prompt-line {
-  margin: 6px 0;
-}
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 30px;
+            opacity: 0;
+            animation: containerSlideIn 1s ease-out 1s forwards;
+        }
+        
+        @keyframes containerSlideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .split-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .split-half {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 0.8s ease-out 1.5s forwards;
+        }
+        
+        .split-half.right-side {
+            animation: slideInRight 0.8s ease-out 1.7s forwards;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .section-label {
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: #2c3e50;
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .benefit-item {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: none;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .benefit-item.active {
+            opacity: 1;
+            transform: translateY(0);
+            animation: benefitHighlight 0.8s ease-out;
+        }
+        
+        @keyframes benefitHighlight {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.02); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        
+        .contrast-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+            overflow: hidden;
+        }
+        
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: cardSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes cardSlideIn {
+            0% { transform: translateY(30px) scale(0.95); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        
+        .nl-card {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .ml-card {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        }
+        
+        .card-title {
+            font-weight: 700;
+            padding: 20px 25px;
+            background: rgba(255,255,255,0.2);
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        .card-body {
+            padding: 25px;
+            color: white;
+            white-space: pre-wrap;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .prompt-block .prompt-line {
+            margin: 8px 0;
+            padding: 5px 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .contrast-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
 

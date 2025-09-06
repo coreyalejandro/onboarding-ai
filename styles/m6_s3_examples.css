@@ -1,7 +1,133 @@
-.container { padding: 30px 20px; }
-.slide-title { margin-bottom: 20px; }
-.examples-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.example-panel { border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: #0b1020; }
-.panel-title { font-weight: 800; padding: 10px 12px; background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.1); }
-.code-block { padding: 12px; color: #e2e8f0; white-space: pre-wrap; min-height: 160px; }
-.bottom-caption { margin-top: 16px; color: #cbd5e1; text-align: center; }
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 30px;
+            opacity: 0;
+            animation: containerSlideIn 1s ease-out 1s forwards;
+        }
+        
+        @keyframes containerSlideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .examples-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .example-panel {
+            border: none;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+            overflow: hidden;
+        }
+        
+        .example-panel.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: panelSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes panelSlideIn {
+            0% { transform: translateY(50px) scale(0.9); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        
+        .example-panel.left {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .example-panel.right {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        }
+        
+        .panel-title {
+            font-weight: 800;
+            padding: 20px 25px;
+            background: rgba(255,255,255,0.2);
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .code-block {
+            padding: 25px;
+            color: white;
+            white-space: pre-wrap;
+            min-height: 180px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .code-block.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: codeBlockSlide 0.6s ease-out;
+        }
+        
+        @keyframes codeBlockSlide {
+            0% { transform: translateY(20px) scale(0.98); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        
+        .bottom-caption {
+            margin-top: 30px;
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 30px;
+            border-radius: 25px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .bottom-caption.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: captionSlide 0.8s ease-out;
+        }
+        
+        @keyframes captionSlide {
+            0% { transform: translateY(20px) scale(0.95); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .examples-split {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }

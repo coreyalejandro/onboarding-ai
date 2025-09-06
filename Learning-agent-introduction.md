@@ -402,8 +402,8 @@ This document contains detailed voiceover scripts, screencast directions, and on
   expected_output: "The report states that 500 requests were processed with 98% success."
 ```
 
-2. Show a code snippet that loads a fixture (e.g. sample data or pre‑computed embedding).
-3. Show a configuration file where the model version and tool versions are pinned.
+1. Show a code snippet that loads a fixture (e.g. sample data or pre‑computed embedding).
+2. Show a configuration file where the model version and tool versions are pinned.
 
 **Delivery cues:**
 
@@ -452,8 +452,8 @@ This document contains detailed voiceover scripts, screencast directions, and on
   expected_output: "It is currently sunny and 75°F in New York."
 ```
 
-2. Type a different input/output pair as an example.
-3. Leave a blank template for the learner to fill in.
+1. Type a different input/output pair as an example.
+2. Leave a blank template for the learner to fill in.
 
 **Delivery cues:**
 

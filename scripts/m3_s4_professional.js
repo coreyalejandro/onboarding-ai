@@ -14,7 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animateStep(stepId, exampleDelay) {
         const stepElement = document.getElementById(stepId);
-        const exampleElement = document.getElementById(stepId.replace('step', '') + 'Example');
+        const exampleIds = {
+            'step1': 'specExample',
+            'step2': 'testsExample', 
+            'step3': 'loggingExample',
+            'step4': 'guardrailsExample',
+            'step5': 'docsExample'
+        };
+        const exampleElement = document.getElementById(exampleIds[stepId]);
         const statusElement = document.getElementById(stepId + 'Status');
 
         // Animate step in
@@ -70,7 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (let i = 0; i <= index; i++) {
                     const prevStep = steps[i];
                     const prevStepElement = document.getElementById(prevStep.id);
-                    const prevExampleElement = document.getElementById(prevStep.id.replace('step', '') + 'Example');
+                    const exampleIds = {
+                        'step1': 'specExample',
+                        'step2': 'testsExample', 
+                        'step3': 'loggingExample',
+                        'step4': 'guardrailsExample',
+                        'step5': 'docsExample'
+                    };
+                    const prevExampleElement = document.getElementById(exampleIds[prevStep.id]);
                     const prevStatusElement = document.getElementById(prevStep.id + 'Status');
                     
                     prevStepElement.classList.add('animate-in');
