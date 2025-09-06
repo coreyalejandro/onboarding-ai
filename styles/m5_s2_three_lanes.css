@@ -1,0 +1,282 @@
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 30px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: titleSlideIn 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes titleSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .lanes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+            flex: 1;
+        }
+        
+        .lane {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .lane.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: laneSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes laneSlideIn {
+            from { transform: translateY(30px) scale(0.95); }
+            to { transform: translateY(0) scale(1); }
+        }
+        
+        .lane-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .lane-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .lane-icon {
+            font-size: 2rem;
+        }
+        
+        .lane-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+        
+        .activity-item.show {
+            opacity: 1;
+            transform: translateX(0);
+            animation: activitySlideIn 0.5s ease-out;
+        }
+        
+        @keyframes activitySlideIn {
+            from { transform: translateX(-20px) scale(0.95); }
+            to { transform: translateX(0) scale(1); }
+        }
+        
+        .activity-icon {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+        
+        .activity-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        /* Color coding for each lane */
+        #designLane {
+            border-left: 4px solid #3498db;
+        }
+        
+        #designLane .lane-title {
+            color: #3498db;
+        }
+        
+        #buildLane {
+            border-left: 4px solid #2ecc71;
+        }
+        
+        #buildLane .lane-title {
+            color: #2ecc71;
+        }
+        
+        #runLane {
+            border-left: 4px solid #f39c12;
+        }
+        
+        #runLane .lane-title {
+            color: #f39c12;
+        }
+        
+        .flow-arrows {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .flow-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+        
+        .flow-arrow.show {
+            opacity: 1;
+            transform: scale(1);
+            animation: arrowSlideIn 0.6s ease-out;
+        }
+        
+        @keyframes arrowSlideIn {
+            from { transform: scale(0.8) translateY(20px); }
+            to { transform: scale(1) translateY(0); }
+        }
+        
+        .arrow-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db 0%, #2ecc71 100%);
+            position: relative;
+        }
+        
+        .arrow-head {
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #2ecc71;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        
+        .arrow-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            margin-top: 8px;
+            text-align: center;
+        }
+        
+        .linear-flow-message {
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .linear-flow-message.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: messageSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes messageSlideIn {
+            from { transform: translateY(20px) scale(0.95); }
+            to { transform: translateY(0) scale(1); }
+        }
+        
+        .message-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .lanes-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .lane-title {
+                font-size: 1.5rem;
+            }
+            
+            .flow-arrows {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .arrow-line {
+                width: 3px;
+                height: 40px;
+                transform: rotate(90deg);
+            }
+            
+            .arrow-head {
+                right: -4px;
+                top: -8px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 8px solid #2ecc71;
+                border-bottom: none;
+            }
+            
+            .message-text {
+                font-size: 1.2rem;
+                padding: 15px 25px;
+            }
+        }

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 5 - Slide 3: Sort a Feature into D/B/R with Hand-offs</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m5_s3_feature_sort.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Sort a Feature into D/B/R with Hand-offs</div>
+
+      <div class="feature-card" id="featureCard">
+        <div class="card-header">
+          <div class="card-icon">📄</div>
+          <div class="card-title">Summarise PDF Reports</div>
+        </div>
+        <div class="card-content">
+          <div class="card-description">Extract key insights from PDF documents</div>
+        </div>
+      </div>
+
+      <div class="lanes-container">
+        <div class="lane" id="designLane">
+          <div class="lane-header">
+            <div class="lane-title">Design</div>
+            <div class="lane-icon">🎯</div>
+          </div>
+          <div class="lane-content" id="designContent">
+            <div class="task-item" id="designTask1">
+              <div class="task-icon">📋</div>
+              <div class="task-text">Define scope</div>
+            </div>
+            <div class="task-item" id="designTask2">
+              <div class="task-icon">📏</div>
+              <div class="task-text">Set length limits</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lane" id="buildLane">
+          <div class="lane-header">
+            <div class="lane-title">Build</div>
+            <div class="lane-icon">🔨</div>
+          </div>
+          <div class="lane-content" id="buildContent">
+            <div class="task-item" id="buildTask1">
+              <div class="task-icon">🛠️</div>
+              <div class="task-text">PDF parser tool</div>
+            </div>
+            <div class="task-item" id="buildTask2">
+              <div class="task-icon">💬</div>
+              <div class="task-text">Summarising prompt</div>
+            </div>
+            <div class="task-item" id="buildTask3">
+              <div class="task-icon">🧪</div>
+              <div class="task-text">Golden tests</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lane" id="runLane">
+          <div class="lane-header">
+            <div class="lane-title">Run</div>
+            <div class="lane-icon">🚀</div>
+          </div>
+          <div class="lane-content" id="runContent">
+            <div class="task-item" id="runTask1">
+              <div class="task-icon">📦</div>
+              <div class="task-text">Deploy agent</div>
+            </div>
+            <div class="task-item" id="runTask2">
+              <div class="task-icon">👁️</div>
+              <div class="task-text">Monitor quality</div>
+            </div>
+            <div class="task-item" id="runTask3">
+              <div class="task-icon">🔄</div>
+              <div class="task-text">Adjust based on feedback</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-summary" id="journeySummary">
+        <div class="summary-title">Feature Journey</div>
+        <div class="summary-text">Design → Build → Run</div>
+        <div class="summary-description">Each task belongs in only one lane</div>
+      </div>
+    </div>
+
+    <script src="scripts/m5_s3_feature_sort.js"></script>
+  </body>
+</html>

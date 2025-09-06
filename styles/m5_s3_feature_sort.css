@@ -1,0 +1,284 @@
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 30px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: titleSlideIn 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes titleSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+            cursor: pointer;
+        }
+        
+        .feature-card.show {
+            opacity: 1;
+            transform: scale(1);
+            animation: cardSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes cardSlideIn {
+            from { transform: scale(0.9) translateY(-20px); }
+            to { transform: scale(1) translateY(0); }
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .card-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .lanes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+            flex: 1;
+        }
+        
+        .lane {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .lane.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: laneSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes laneSlideIn {
+            from { transform: translateY(30px) scale(0.95); }
+            to { transform: translateY(0) scale(1); }
+        }
+        
+        .lane-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .lane-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .lane-icon {
+            font-size: 2rem;
+        }
+        
+        .lane-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 200px;
+        }
+        
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+        
+        .task-item.show {
+            opacity: 1;
+            transform: translateX(0);
+            animation: taskSlideIn 0.5s ease-out;
+        }
+        
+        @keyframes taskSlideIn {
+            from { transform: translateX(-20px) scale(0.95); }
+            to { transform: translateX(0) scale(1); }
+        }
+        
+        .task-icon {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+        
+        .task-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        /* Color coding for each lane */
+        #designLane {
+            border-left: 4px solid #3498db;
+        }
+        
+        #designLane .lane-title {
+            color: #3498db;
+        }
+        
+        #buildLane {
+            border-left: 4px solid #2ecc71;
+        }
+        
+        #buildLane .lane-title {
+            color: #2ecc71;
+        }
+        
+        #runLane {
+            border-left: 4px solid #f39c12;
+        }
+        
+        #runLane .lane-title {
+            color: #f39c12;
+        }
+        
+        .journey-summary {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .journey-summary.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: summarySlideIn 0.8s ease-out;
+        }
+        
+        @keyframes summarySlideIn {
+            from { transform: translateY(30px) scale(0.95); }
+            to { transform: translateY(0) scale(1); }
+        }
+        
+        .summary-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .summary-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .summary-description {
+            font-size: 1.1rem;
+            color: white;
+            opacity: 0.9;
+        }
+        
+        /* Drag and drop visual feedback */
+        .feature-card.dragging {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(52, 152, 219, 0.5);
+        }
+        
+        .lane.drag-over {
+            background: rgba(255,255,255,0.2);
+            border: 2px dashed rgba(255,255,255,0.5);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .lanes-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .card-title {
+                font-size: 1.5rem;
+            }
+            
+            .lane-title {
+                font-size: 1.5rem;
+            }
+            
+            .summary-title {
+                font-size: 1.5rem;
+            }
+            
+            .summary-text {
+                font-size: 1.3rem;
+            }
+        }

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 5 - Slide 4: Classify Six Tasks: D vs B vs R</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m5_s4_classify_tasks.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Classify Six Tasks: D vs B vs R</div>
+
+      <div class="instruction-text">
+        <p>Decide which lane each task belongs to: <strong>Design</strong>, <strong>Build</strong>, or <strong>Run</strong></p>
+      </div>
+
+      <div class="tasks-container">
+        <div class="task-card" id="task1">
+          <div class="task-number">1</div>
+          <div class="task-text">Choose the maximum budget for API calls per request</div>
+        </div>
+        <div class="task-card" id="task2">
+          <div class="task-number">2</div>
+          <div class="task-text">Write a prompt to extract key points from a transcript</div>
+        </div>
+        <div class="task-card" id="task3">
+          <div class="task-number">3</div>
+          <div class="task-text">Add monitoring of memory usage</div>
+        </div>
+        <div class="task-card" id="task4">
+          <div class="task-number">4</div>
+          <div class="task-text">Define what topics the agent must avoid</div>
+        </div>
+        <div class="task-card" id="task5">
+          <div class="task-number">5</div>
+          <div class="task-text">Write golden tests for translation</div>
+        </div>
+        <div class="task-card" id="task6">
+          <div class="task-number">6</div>
+          <div class="task-text">Update the vector store index after new documents are added</div>
+        </div>
+      </div>
+
+      <div class="countdown-timer" id="countdownTimer">
+        <div class="timer-text">Think about your answers...</div>
+        <div class="timer-circle">
+          <div class="timer-number" id="timerNumber">5</div>
+        </div>
+      </div>
+
+      <div class="lanes-container">
+        <div class="lane" id="designLane">
+          <div class="lane-header">
+            <div class="lane-title">Design</div>
+            <div class="lane-icon">🎯</div>
+          </div>
+          <div class="lane-content" id="designContent">
+            <!-- Tasks will be moved here -->
+          </div>
+        </div>
+
+        <div class="lane" id="buildLane">
+          <div class="lane-header">
+            <div class="lane-title">Build</div>
+            <div class="lane-icon">🔨</div>
+          </div>
+          <div class="lane-content" id="buildContent">
+            <!-- Tasks will be moved here -->
+          </div>
+        </div>
+
+        <div class="lane" id="runLane">
+          <div class="lane-header">
+            <div class="lane-title">Run</div>
+            <div class="lane-icon">🚀</div>
+          </div>
+          <div class="lane-content" id="runContent">
+            <!-- Tasks will be moved here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="answers-section" id="answersSection">
+        <div class="answers-title">Answers</div>
+        <div class="answers-grid">
+          <div class="answer-item">
+            <div class="answer-lane">Design:</div>
+            <div class="answer-tasks">1, 4</div>
+          </div>
+          <div class="answer-item">
+            <div class="answer-lane">Build:</div>
+            <div class="answer-tasks">2, 5</div>
+          </div>
+          <div class="answer-item">
+            <div class="answer-lane">Run:</div>
+            <div class="answer-tasks">3, 6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/m5_s4_classify_tasks.js"></script>
+  </body>
+</html>

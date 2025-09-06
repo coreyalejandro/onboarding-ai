@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 5 - Slide 2: Three Lanes: Design, Build, Run</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m5_s2_three_lanes.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Three Lanes: Design, Build, Run</div>
+
+      <div class="lanes-container">
+        <div class="lane" id="designLane">
+          <div class="lane-header">
+            <div class="lane-title">Design</div>
+            <div class="lane-icon">🎯</div>
+          </div>
+          <div class="lane-content">
+            <div class="activity-item" id="designSpec">
+              <div class="activity-icon">📋</div>
+              <div class="activity-text">Spec</div>
+            </div>
+            <div class="activity-item" id="designConstraints">
+              <div class="activity-icon">🚧</div>
+              <div class="activity-text">Constraints</div>
+            </div>
+            <div class="activity-item" id="designSuccess">
+              <div class="activity-icon">📊</div>
+              <div class="activity-text">Success Metrics</div>
+            </div>
+            <div class="activity-item" id="designFailure">
+              <div class="activity-icon">⚠️</div>
+              <div class="activity-text">Failure Modes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lane" id="buildLane">
+          <div class="lane-header">
+            <div class="lane-title">Build</div>
+            <div class="lane-icon">🔨</div>
+          </div>
+          <div class="lane-content">
+            <div class="activity-item" id="buildPrompts">
+              <div class="activity-icon">💬</div>
+              <div class="activity-text">Prompts</div>
+            </div>
+            <div class="activity-item" id="buildPlanners">
+              <div class="activity-icon">🧠</div>
+              <div class="activity-text">Planners</div>
+            </div>
+            <div class="activity-item" id="buildMemory">
+              <div class="activity-icon">🧮</div>
+              <div class="activity-text">Memory</div>
+            </div>
+            <div class="activity-item" id="buildTools">
+              <div class="activity-icon">🛠️</div>
+              <div class="activity-text">Tools</div>
+            </div>
+            <div class="activity-item" id="buildTests">
+              <div class="activity-icon">🧪</div>
+              <div class="activity-text">Tests</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lane" id="runLane">
+          <div class="lane-header">
+            <div class="lane-title">Run</div>
+            <div class="lane-icon">🚀</div>
+          </div>
+          <div class="lane-content">
+            <div class="activity-item" id="runDeploy">
+              <div class="activity-icon">📦</div>
+              <div class="activity-text">Deploy</div>
+            </div>
+            <div class="activity-item" id="runMonitor">
+              <div class="activity-icon">👁️</div>
+              <div class="activity-text">Monitor</div>
+            </div>
+            <div class="activity-item" id="runTrace">
+              <div class="activity-icon">🔍</div>
+              <div class="activity-text">Trace</div>
+            </div>
+            <div class="activity-item" id="runIterate">
+              <div class="activity-icon">🔄</div>
+              <div class="activity-text">Iterate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrows">
+        <div class="flow-arrow" id="arrow1">
+          <div class="arrow-line"></div>
+          <div class="arrow-head"></div>
+          <div class="arrow-label">Design → Build</div>
+        </div>
+        <div class="flow-arrow" id="arrow2">
+          <div class="arrow-line"></div>
+          <div class="arrow-head"></div>
+          <div class="arrow-label">Build → Run</div>
+        </div>
+      </div>
+
+      <div class="linear-flow-message" id="linearFlowMessage">
+        <div class="message-text">Linear Flow: Design → Build → Run</div>
+      </div>
+    </div>
+
+    <script src="scripts/m5_s2_three_lanes.js"></script>
+  </body>
+</html>

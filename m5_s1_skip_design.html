@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 5 - Slide 1: What Happens When You Skip Design</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m5_s1_skip_design.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">What Happens When You Skip Design</div>
+
+      <div class="content-wrapper">
+        <!-- Chaotic Workflow Section -->
+        <div class="chaos-section" id="chaosSection">
+          <div class="section-label">Chaotic Workflow</div>
+          <div class="workflow-diagram">
+            <div class="workflow-node" id="node1">Start</div>
+            <div class="workflow-arrow arrow1"></div>
+            <div class="workflow-node" id="node2">Hack</div>
+            <div class="workflow-arrow arrow2"></div>
+            <div class="workflow-node" id="node3">Debug</div>
+            <div class="workflow-arrow arrow3"></div>
+            <div class="workflow-node" id="node4">Fix</div>
+            <div class="workflow-arrow arrow4"></div>
+            <div class="workflow-node" id="node5">Repeat</div>
+          </div>
+          
+          <div class="bug-stack">
+            <div class="bug-note" id="bug1">Bug 1</div>
+            <div class="bug-note" id="bug2">Bug 2</div>
+            <div class="bug-note" id="bug3">Missing Feature</div>
+            <div class="bug-note" id="bug4">Can't Test</div>
+            <div class="bug-note" id="bug5">Can't Extend</div>
+          </div>
+        </div>
+
+        <!-- Blueprint Section -->
+        <div class="blueprint-section" id="blueprintSection">
+          <div class="section-label">Agent Design</div>
+          <div class="blueprint-diagram">
+            <div class="design-component" id="scope">
+              <div class="component-title">Scope</div>
+              <div class="component-desc">Clear boundaries</div>
+            </div>
+            <div class="design-component" id="constraints">
+              <div class="component-title">Constraints</div>
+              <div class="component-desc">Safety limits</div>
+            </div>
+            <div class="design-component" id="success">
+              <div class="component-title">Success Metrics</div>
+              <div class="component-desc">Measurable goals</div>
+            </div>
+            <div class="design-component" id="guardrails">
+              <div class="component-title">Guardrails</div>
+              <div class="component-desc">Failure modes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-overlay" id="warningOverlay">
+        <div class="warning-text">Projects Fail Without Design</div>
+      </div>
+    </div>
+
+    <script src="scripts/m5_s1_skip_design.js"></script>
+  </body>
+</html>

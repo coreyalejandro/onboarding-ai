@@ -1,0 +1,299 @@
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 30px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: titleSlideIn 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes titleSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .chaos-section, .blueprint-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .chaos-section.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: chaosSectionSlide 0.8s ease-out;
+        }
+        
+        .blueprint-section.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: blueprintSectionSlide 0.8s ease-out;
+        }
+        
+        @keyframes chaosSectionSlide {
+            from { transform: translateY(30px) scale(0.95); }
+            to { transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes blueprintSectionSlide {
+            from { transform: translateY(30px) scale(0.95); }
+            to { transform: translateY(0) scale(1); }
+        }
+        
+        .section-label {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .workflow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .workflow-node {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease;
+        }
+        
+        .workflow-node.show {
+            opacity: 1;
+            transform: scale(1);
+            animation: nodeBounce 0.6s ease-out;
+        }
+        
+        @keyframes nodeBounce {
+            0% { transform: scale(0.8) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        
+        .workflow-arrow {
+            width: 40px;
+            height: 3px;
+            background: #e74c3c;
+            position: relative;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.5s ease;
+        }
+        
+        .workflow-arrow.show {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        
+        .workflow-arrow::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #e74c3c;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        
+        .bug-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .bug-note {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(230, 126, 34, 0.3);
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s ease;
+        }
+        
+        .bug-note.show {
+            opacity: 1;
+            transform: translateX(0);
+            animation: bugSlideIn 0.5s ease-out;
+        }
+        
+        @keyframes bugSlideIn {
+            from { transform: translateX(-30px) rotate(-2deg); }
+            to { transform: translateX(0) rotate(0deg); }
+        }
+        
+        .blueprint-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .design-component {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+        
+        .design-component.show {
+            opacity: 1;
+            transform: scale(1);
+            animation: componentSlideIn 0.6s ease-out;
+        }
+        
+        @keyframes componentSlideIn {
+            from { transform: scale(0.8) translateY(20px); }
+            to { transform: scale(1) translateY(0); }
+        }
+        
+        .component-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .component-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .warning-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(231, 76, 60, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+        
+        .warning-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .warning-text {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            transform: scale(0.8);
+            transition: transform 0.5s ease;
+        }
+        
+        .warning-overlay.show .warning-text {
+            transform: scale(1);
+            animation: warningPulse 0.8s ease-out;
+        }
+        
+        @keyframes warningPulse {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .workflow-diagram {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .workflow-arrow {
+                width: 3px;
+                height: 30px;
+                transform: rotate(90deg);
+            }
+            
+            .workflow-arrow::after {
+                right: -4px;
+                top: -8px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 8px solid #e74c3c;
+                border-bottom: none;
+            }
+            
+            .blueprint-diagram {
+                grid-template-columns: 1fr;
+            }
+            
+            .warning-text {
+                font-size: 2rem;
+            }
+        }
