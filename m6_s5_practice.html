@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 6 - Slide 5: Practise the Framework</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m6_s5_practice.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Practice: Rewrite into the Anthropic Framework</div>
+
+      <div class="practice-split">
+        <div class="practice-panel left">
+          <div class="panel-title">Natural Language Prompt</div>
+          <div class="text-box" id="nlText">
+"Can you review this PR and let me know if it's safe to merge?"
+          </div>
+        </div>
+
+        <div class="practice-panel right">
+          <div class="panel-title">Anthropic Prompt Framework Template</div>
+          <div class="code-block" id="frameworkTemplate">
+Role & Objective: Review the diff and decide merge readiness.
+Capabilities & Tools: Static analysis only; no network calls.
+Constraints & Safety: No secrets in code; flag insecure patterns.
+Process: List risks → check tests → verify coverage → final decision.
+Input Format: Unified diff text + test report summary.
+Output Format: JSON { decision: "merge|block", reasons: [strings], risks: [strings] }.
+Success Criteria: Decision justified by risks and tests; no missing blockers.
+          </div>
+        </div>
+      </div>
+
+      <div class="timer-container" id="timerContainer">
+        <div class="timer-label">Time to draft your rewrite</div>
+        <div class="timer-bar"><div class="timer-progress" id="timerProgress"></div></div>
+      </div>
+    </div>
+
+    <script src="scripts/m6_s5_practice.js"></script>
+  </body>
+</html>
+

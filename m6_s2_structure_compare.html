@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 6 - Slide 2: Structure — Natural vs Anthropic Framework</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m6_s2_structure_compare.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Structure: Natural Language vs Anthropic Prompt Framework</div>
+
+      <div class="split-container">
+        <div class="split-half left-side">
+          <div class="panel-header">Natural Language Prompt</div>
+          <ul class="structure-list">
+            <li>Conversational prose</li>
+            <li>Implicit constraints</li>
+            <li>Flexible output shape</li>
+            <li>Open‑ended reasoning</li>
+          </ul>
+          <div class="example-box" id="nlExample">
+"Summarize the attached document and tell me the most important parts. If anything is unclear, ask me a question."
+          </div>
+        </div>
+
+        <div class="split-half right-side">
+          <div class="panel-header">Anthropic Prompt Framework (Default)</div>
+          <div class="framework-grid">
+            <div class="fw-item"><span class="fw-key">Role & Objective</span><span class="fw-desc">What you are; the task to achieve</span></div>
+            <div class="fw-item"><span class="fw-key">Capabilities & Tools</span><span class="fw-desc">What you can use</span></div>
+            <div class="fw-item"><span class="fw-key">Constraints & Safety</span><span class="fw-desc">Scope limits and refusal rules</span></div>
+            <div class="fw-item"><span class="fw-key">Process</span><span class="fw-desc">High‑level plan/steps</span></div>
+            <div class="fw-item"><span class="fw-key">Input Format</span><span class="fw-desc">How input arrives</span></div>
+            <div class="fw-item"><span class="fw-key">Output Format</span><span class="fw-desc">Exact schema (e.g., JSON)</span></div>
+            <div class="fw-item"><span class="fw-key">Examples</span><span class="fw-desc">Few‑shot inputs/outputs</span></div>
+            <div class="fw-item"><span class="fw-key">Success Criteria</span><span class="fw-desc">Deterministic accept conditions</span></div>
+          </div>
+
+          <div class="example-box" id="mlExample">
+Role & Objective: Summarize the document into ≤ 120 words.
+Capabilities & Tools: None required.
+Constraints & Safety: Use only provided text; avoid opinions.
+Process: Extract key metrics → group themes → order by impact.
+Input Format: Raw text string.
+Output Format: JSON array of 4–6 bullet strings.
+Examples: ["…"]
+Success Criteria: Facts preserved; metrics included; no hallucinations.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/m6_s2_structure_compare.js"></script>
+  </body>
+</html>
+

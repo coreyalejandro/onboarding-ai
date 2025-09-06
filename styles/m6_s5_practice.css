@@ -1,0 +1,9 @@
+.container { padding: 30px 20px; }
+.slide-title { margin-bottom: 20px; }
+.practice-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.practice-panel { border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: #0b1020; }
+.panel-title { font-weight: 800; padding: 10px 12px; background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.text-box, .code-block { padding: 12px; color: #e2e8f0; white-space: pre-wrap; min-height: 180px; }
+.timer-container { margin-top: 18px; }
+.timer-bar { height: 8px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; }
+.timer-progress { height: 100%; width: 0; background: linear-gradient(90deg, #22c55e, #3b82f6); transition: width 0.3s ease; }

@@ -1,0 +1,66 @@
+.container {
+  padding: 30px 20px;
+}
+
+.slide-title {
+  margin-bottom: 20px;
+}
+
+.split-container {
+  display: flex;
+  gap: 20px;
+}
+
+.split-half {
+  flex: 1;
+}
+
+.section-label {
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-item {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contrast-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  background: #0b1020;
+}
+
+.card-title {
+  font-weight: 700;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-body {
+  padding: 12px;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+}
+
+.prompt-block .prompt-line {
+  margin: 6px 0;
+}
+
