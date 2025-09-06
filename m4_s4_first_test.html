@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 4 - Slide 4: Write Your First Golden Test Case</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m4_s4_first_test.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Write Your First Golden Test Case</div>
+
+      <div class="content-container">
+        <div class="template-section">
+          <div class="section-header">
+            <div class="section-icon">📝</div>
+            <div class="section-title">Template</div>
+          </div>
+          <div class="code-block">
+            <div class="code-header">my_first_test.yaml</div>
+            <div class="code-content">
+<span class="yaml-key">- name:</span> <span class="yaml-string">my_first_test</span>
+<span class="yaml-key">  input:</span> <span class="yaml-string">"Describe the weather in New York"</span>
+<span class="yaml-key">  expected_output:</span> <span class="yaml-string">"It is currently sunny and 75°F in New York."</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="example-section">
+          <div class="section-header">
+            <div class="section-icon">💡</div>
+            <div class="section-title">Example</div>
+          </div>
+          <div class="code-block">
+            <div class="code-header">example_test.yaml</div>
+            <div class="code-content">
+<span class="yaml-key">- name:</span> <span class="yaml-string">summarize_text</span>
+<span class="yaml-key">  input:</span> <span class="yaml-string">"Summarize: The meeting lasted 2 hours and covered 5 topics."</span>
+<span class="yaml-key">  expected_output:</span> <span class="yaml-string">"The meeting was 2 hours long and discussed 5 topics."</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="blank-section">
+          <div class="section-header">
+            <div class="section-icon">✏️</div>
+            <div class="section-title">Your Turn</div>
+          </div>
+          <div class="code-block">
+            <div class="code-header">your_test.yaml</div>
+            <div class="code-content">
+<span class="yaml-key">- name:</span> <span class="yaml-string">________________</span>
+<span class="yaml-key">  input:</span> <span class="yaml-string">"________________"</span>
+<span class="yaml-key">  expected_output:</span> <span class="yaml-string">"________________"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timer-section" id="timerSection">
+        <div class="timer-container">
+          <div class="timer-label">Time to write your test</div>
+          <div class="timer-bar">
+            <div class="timer-progress" id="timerProgress"></div>
+          </div>
+          <div class="timer-caption">Pause if you need more time</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/m4_s4_first_test.js"></script>
+  </body>
+</html>

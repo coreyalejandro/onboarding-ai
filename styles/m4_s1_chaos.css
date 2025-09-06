@@ -1,0 +1,233 @@
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 30px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: containerSlideIn 1s ease-out 1s forwards;
+        }
+        
+        @keyframes containerSlideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .comparison-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .run-panel {
+            flex: 1;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .run-panel.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: panelSlideIn 0.8s ease-out;
+        }
+        
+        @keyframes panelSlideIn {
+            0% { transform: translateY(50px) scale(0.9); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        
+        .run-header {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .input-section, .output-section {
+            margin-bottom: 20px;
+        }
+        
+        .input-label, .output-label {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .input-text {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            color: #2c3e50;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            border-left: 4px solid #3498db;
+        }
+        
+        .output-text {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            color: #2c3e50;
+            line-height: 1.6;
+            border-left: 4px solid #e74c3c;
+            position: relative;
+        }
+        
+        .chaos-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        
+        .chaos-overlay.show {
+            opacity: 1;
+            animation: chaosAppear 1s ease-out;
+        }
+        
+        @keyframes chaosAppear {
+            0% { 
+                transform: translate(-50%, -50%) scale(0.5) rotate(-10deg);
+                opacity: 0;
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        .chaos-text {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #e74c3c;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        .highlight-differences {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+        
+        .highlight-differences.show {
+            opacity: 1;
+        }
+        
+        .diff-arrow {
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: #e74c3c;
+            border-radius: 2px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.6s ease;
+        }
+        
+        .diff-arrow::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -6px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #e74c3c;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+        
+        .diff-arrow.show {
+            opacity: 1;
+            transform: scaleX(1);
+            animation: arrowDraw 0.8s ease-out;
+        }
+        
+        @keyframes arrowDraw {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+        
+        .diff-arrow-1 {
+            top: 45%;
+            left: 25%;
+            transform-origin: left center;
+        }
+        
+        .diff-arrow-2 {
+            top: 55%;
+            left: 30%;
+            transform-origin: left center;
+        }
+        
+        .diff-arrow-3 {
+            top: 65%;
+            left: 35%;
+            transform-origin: left center;
+        }
+        
+        /* Shake effect for chaos */
+        .run-panel.chaos-shake {
+            animation: chaosShake 0.5s ease-in-out;
+        }
+        
+        @keyframes chaosShake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .comparison-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .chaos-text {
+                font-size: 2.5rem;
+                padding: 15px 25px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }

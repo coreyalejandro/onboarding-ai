@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 4 - Slide 1: Same Input, Different Output = Chaos</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m4_s1_chaos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Same Input, Different Output = Chaos</div>
+
+      <div class="comparison-container">
+        <div class="run-panel" id="run1">
+          <div class="run-header">Run 1</div>
+          <div class="input-section">
+            <div class="input-label">Input:</div>
+            <div class="input-text">"Summarise this report"</div>
+          </div>
+          <div class="output-section">
+            <div class="output-label">Output:</div>
+            <div class="output-text" id="output1">
+              The report shows significant growth in Q3 with revenue increasing by 15% and customer satisfaction at 92%.
+            </div>
+          </div>
+        </div>
+
+        <div class="run-panel" id="run2">
+          <div class="run-header">Run 2</div>
+          <div class="input-section">
+            <div class="input-label">Input:</div>
+            <div class="input-text">"Summarise this report"</div>
+          </div>
+          <div class="output-section">
+            <div class="output-label">Output:</div>
+            <div class="output-text" id="output2">
+              Q3 performance exceeded expectations with 15% revenue growth and 92% customer satisfaction rating.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chaos-overlay" id="chaosOverlay">
+        <div class="chaos-text">CHAOS</div>
+      </div>
+
+      <div class="highlight-differences" id="highlightDifferences">
+        <div class="diff-arrow diff-arrow-1"></div>
+        <div class="diff-arrow diff-arrow-2"></div>
+        <div class="diff-arrow diff-arrow-3"></div>
+      </div>
+    </div>
+
+    <script src="scripts/m4_s1_chaos.js"></script>
+  </body>
+</html>

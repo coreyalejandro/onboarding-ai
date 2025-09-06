@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 4 - Slide 3: Failing Golden → Fix → Re-run</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m4_s3_fix_rerun.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Failing Golden → Fix → Re-run</div>
+
+      <div class="cycle-container">
+        <div class="cycle-step" id="step1">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Run Golden Test</div>
+            <div class="test-result fail" id="testResult1">
+              <div class="result-icon">❌</div>
+              <div class="result-text">FAIL</div>
+              <div class="result-details">Output doesn't match expected</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cycle-arrow" id="arrow1">→</div>
+
+        <div class="cycle-step" id="step2">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">Investigate & Fix</div>
+            <div class="fix-demo">
+              <div class="fix-item">Lower temperature: 0.0</div>
+              <div class="fix-item">Adjust planner instructions</div>
+              <div class="fix-item">Update prompt clarity</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cycle-arrow" id="arrow2">→</div>
+
+        <div class="cycle-step" id="step3">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Re-run Test</div>
+            <div class="test-result pass" id="testResult2">
+              <div class="result-icon">✅</div>
+              <div class="result-text">PASS</div>
+              <div class="result-details">Output matches expected</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cycle-summary" id="cycleSummary">
+        <div class="summary-title">Deterministic Evaluation Cycle</div>
+        <div class="summary-steps">
+          <span class="summary-step">Fail</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-step">Investigate</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-step">Fix</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-step">Re-run</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-step">Pass</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/m4_s3_fix_rerun.js"></script>
+  </body>
+</html>

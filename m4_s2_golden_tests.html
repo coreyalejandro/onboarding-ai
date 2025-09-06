@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 4 - Slide 2: Golden Tests, Fixtures, and Version Pinning</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/m4_s2_golden_tests.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-title">Golden Tests, Fixtures, and Version Pinning</div>
+
+      <div class="content-grid">
+        <div class="content-section" id="goldenTests">
+          <div class="section-header">
+            <div class="section-icon">🧪</div>
+            <div class="section-title">Golden Tests</div>
+          </div>
+          <div class="code-block">
+            <div class="code-header">golden_tests.yaml</div>
+            <div class="code-content">
+<span class="yaml-key">- name:</span> <span class="yaml-string">summarise_report</span>
+<span class="yaml-key">  input:</span> <span class="yaml-string">"Summarise: The system processed 500 requests with a 98% success rate."</span>
+<span class="yaml-key">  expected_output:</span> <span class="yaml-string">"The report states that 500 requests were processed with 98% success."</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section" id="fixtures">
+          <div class="section-header">
+            <div class="section-icon">📁</div>
+            <div class="section-title">Fixtures</div>
+          </div>
+          <div class="code-block">
+            <div class="code-header">load_fixture.py</div>
+            <div class="code-content">
+<span class="python-keyword">import</span> <span class="python-module">json</span>
+
+<span class="python-keyword">def</span> <span class="python-function">load_sample_data</span>():
+    <span class="python-keyword">with</span> <span class="python-function">open</span>(<span class="python-string">'fixtures/sample_report.json'</span>) <span class="python-keyword">as</span> f:
+        <span class="python-keyword">return</span> <span class="python-function">json.load</span>(f)
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section" id="versionPinning">
+          <div class="section-header">
+            <div class="section-icon">🔒</div>
+            <div class="section-title">Version Pinning</div>
+          </div>
+          <div class="code-block">
+            <div class="code-header">config.yaml</div>
+            <div class="code-content">
+<span class="yaml-key">model:</span>
+<span class="yaml-key">  version:</span> <span class="yaml-string">"claude-3-5-sonnet-20241022"</span>
+<span class="yaml-key">  temperature:</span> <span class="yaml-value">0.0</span>
+
+<span class="yaml-key">tools:</span>
+<span class="yaml-key">  weather_api:</span> <span class="yaml-string">"v2.1.3"</span>
+<span class="yaml-key">  database:</span> <span class="yaml-string">"v1.8.2"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="guarantee-banner" id="guaranteeBanner">
+        <div class="banner-icon">✅</div>
+        <div class="banner-text">Together, they guarantee reproducibility</div>
+      </div>
+    </div>
+
+    <script src="scripts/m4_s2_golden_tests.js"></script>
+  </body>
+</html>
