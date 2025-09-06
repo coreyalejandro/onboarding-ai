@@ -1,6 +1,31 @@
 # Agentcraft Detailed Slide Scripts
 
-This document contains detailed voiceover scripts, screencast directions, and on‑screen cues for every slide across the five modules of the Agentcraft orientation course. Use these scripts to record your narration and to guide the screen actions in your audition video.
+This document contains detailed voiceover scripts, screencast directions, and on‑screen cues for every slide across the modules of the Agentcraft orientation course. Use these scripts to record your narration and to guide the screen actions in your audition video.
+
+## Project Status
+
+**✅ COMPLETED MODULES:**
+
+- **Module 1: Sequester Contract** (5 slides) - Complete with HTML, CSS, JS
+- **Module 2: Mental Models** (5 slides) - Complete with HTML, CSS, JS  
+- **Module 3: Pro-grade Checklist** (5 slides) - Complete with HTML, CSS, JS
+- **Module 4: Deterministic Evals** (5 slides) - Complete with HTML, CSS, JS
+- **Module 5: Design → Build → Run** (5 slides) - Complete with HTML, CSS, JS
+- **Module 6: ML-Friendly Power** (5 slides) - Complete with HTML, CSS, JS
+
+**📋 TOTAL SLIDES:** 30 slides across 6 modules
+
+**🛠️ TECHNICAL STATUS:**
+
+- All slides have proper scrolling behavior (fixed common.css and individual CSS files)
+- Consistent color schemes and animations across modules
+- Safari-compatible CSS with proper vendor prefixes
+- Template system created for future slide development
+- All files tracked in Git
+
+**📝 DOCUMENTATION STATUS:**
+
+- All 6 modules: Fully documented with voiceover scripts and screencast directions
 
 ------------------------------------------------------------------------
 
@@ -607,5 +632,132 @@ This document contains detailed voiceover scripts, screencast directions, and on
 
 - Use smooth fade‑ins for each word.
 - At the end, zoom out slightly to show the whole cycle.
+
+------------------------------------------------------------------------
+
+## Module 6 -- ML-Friendly Power
+
+### Slide 1: ML-Friendly Power
+
+**Voiceover:**
+
+> "Natural language is powerful, but it's also unpredictable. Machine learning systems need structure, consistency, and reliability. That's where ML-friendly power comes in.
+>
+> "ML-friendly systems use structured data, clear patterns, and deterministic outputs. They're designed to work with algorithms, not against them. Think JSON instead of paragraphs, schemas instead of free-form text, and predictable formats instead of creative variations."
+
+**Screencast direction:**
+
+1. Display a split-screen comparison showing natural language on the left and structured data on the right.
+2. Show examples of unstructured text (paragraphs, varied formatting) vs structured data (JSON, XML, tables).
+3. Highlight the benefits of structured approaches: consistency, reliability, machine-readable.
+4. Animate the transition from chaotic natural language to clean, structured formats.
+
+**Delivery cues:**
+
+- Use contrasting colors: red/orange for natural language chaos, green/blue for structured clarity.
+- Emphasize the word "predictable" with a slight pause and emphasis.
+- Show visual examples of how ML systems can easily parse structured data.
+
+------------------------------------------------------------------------
+
+### Slide 2: Structure Compare
+
+**Voiceover:**
+
+> "Let's compare approaches. Traditional natural language processing tries to extract meaning from unstructured text. ML-friendly systems provide meaning in structured formats from the start.
+>
+> "Traditional: 'The user wants to book a flight from New York to Los Angeles on March 15th.' ML-friendly: `{action: 'book_flight', origin: 'NYC', destination: 'LAX', date: '2024-03-15'}`.
+>
+> "See the difference? One requires parsing, the other is ready to use."
+
+**Screencast direction:**
+
+1. Show side-by-side examples of natural language vs structured data.
+2. Demonstrate the parsing challenge with natural language (highlighting ambiguous words, multiple interpretations).
+3. Show how structured data eliminates ambiguity and parsing errors.
+4. Display a flowchart showing the complexity of natural language processing vs the simplicity of structured data handling.
+
+**Delivery cues:**
+
+- Use animation to show the "parsing challenge" with natural language text breaking down into multiple possible interpretations.
+- Highlight the structured data with a green checkmark or success indicator.
+- Emphasize the efficiency difference with timing comparisons.
+
+------------------------------------------------------------------------
+
+### Slide 3: Examples
+
+**Voiceover:**
+
+> "Here are real examples of ML-friendly power in action. Instead of asking 'What's the weather like?' and parsing the response, we structure the request: `{location: 'San Francisco', metric: 'temperature', unit: 'celsius'}`.
+>
+> "Instead of free-form user feedback, we collect structured ratings: `{satisfaction: 4, category: 'response_time', comment: 'fast'}`.
+>
+> "Every interaction becomes data. Every data point becomes insight."
+
+**Screencast direction:**
+
+1. Show three practical examples of ML-friendly interactions.
+2. Display the before/after comparison for each example.
+3. Highlight how structured data enables better analytics, reporting, and system improvements.
+4. Show a dashboard or analytics view that demonstrates the power of structured data collection.
+
+**Delivery cues:**
+
+- Use consistent visual styling for all structured data examples.
+- Show the "data becomes insight" transformation with a visual metaphor (data points flowing into charts/graphs).
+- Emphasize the word "every" in the final line with a slight pause.
+
+------------------------------------------------------------------------
+
+### Slide 4: When to Use
+
+**Voiceover:**
+
+> "When should you choose ML-friendly over natural language? Use structured approaches when you need reliability, consistency, and machine processing. Use natural language when you need human creativity, flexibility, and nuanced communication.
+>
+> "The key is knowing your audience. If your primary consumer is a machine, structure it. If it's a human, natural language might be better.
+>
+> "But remember: even human-facing systems can benefit from structured backends."
+
+**Screencast direction:**
+
+1. Display a decision tree or flowchart showing when to use each approach.
+2. Show examples of systems that use both: structured backend with natural language frontend.
+3. Highlight the hybrid approach with examples of successful implementations.
+4. Display a comparison table showing the trade-offs between approaches.
+
+**Delivery cues:**
+
+- Use a visual decision tree that animates as you explain each branch.
+- Emphasize "knowing your audience" with a pause and visual emphasis.
+- Show the hybrid approach with a layered diagram (structured backend, natural language frontend).
+
+------------------------------------------------------------------------
+
+### Slide 5: Practice
+
+**Voiceover:**
+
+> "Now it's your turn. Take a natural language interaction and convert it to ML-friendly structure. Start with something simple: a user request, a system response, or a data collection form.
+>
+> "Remember: structure enables automation, consistency enables reliability, and clarity enables understanding.
+>
+> "Practice this transformation. It's the foundation of ML-friendly systems."
+
+**Screencast direction:**
+
+1. Present a natural language example and challenge the viewer to structure it.
+2. Show a timer or countdown for the practice exercise.
+3. Reveal the structured version after the practice time.
+4. Display multiple examples of successful transformations.
+5. End with a call-to-action to continue practicing.
+
+**Delivery cues:**
+
+- Use an interactive timer or countdown for the practice exercise.
+- Show the transformation with a smooth animation from natural language to structured format.
+- Emphasize the three key principles: structure, consistency, clarity.
+- End with an encouraging tone and clear next steps.
 
 ------------------------------------------------------------------------
