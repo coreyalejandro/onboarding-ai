@@ -73,8 +73,8 @@
             background: rgba(255,255,255,0.1);
             padding: 10px 20px;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
         }
         
         /* Color coding for each word */
@@ -120,8 +120,8 @@
             background: rgba(255,255,255,0.1);
             padding: 25px 40px;
             border-radius: 25px;
-            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             display: inline-block;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
